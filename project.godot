@@ -14,3 +14,13 @@ config/name="DetectiveGame"
 run/main_scene="uid://cc8thvugieo0d"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Globals/Global.gd"
+SignalBus="*res://Globals/SignalBus.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")

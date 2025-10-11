@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc8thvugieo0d"]
 
-[ext_resource type="PackedScene" uid="uid://ckbdhxhba0ncg" path="res://test/room/room-test.glb" id="1_v4o0c"]
+[ext_resource type="PackedScene" uid="uid://ckbdhxhba0ncg" path="res://test/room/room-test.glb" id="1_2262c"]
 
 [sub_resource type="Environment" id="Environment_v4o0c"]
 ambient_light_source = 2
@@ -14,7 +14,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 environment = SubResource("Environment_v4o0c")
 camera_attributes = SubResource("CameraAttributesPractical_lb3jo")
 
-[node name="room-test" parent="." instance=ExtResource("1_v4o0c")]
+[node name="room-test" parent="." instance=ExtResource("1_2262c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024263382, 0.018460274, -0.04821205)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
