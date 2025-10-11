@@ -21,6 +21,13 @@ Global="*res://Globals/Global.gd"
 SignalBus="*res://Globals/SignalBus.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
