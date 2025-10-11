@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgf8ut43fdbv6"
+path="res://.godot/imported/SalaryManIntro.dialogue-3077f20b526212a790cfffed009427b0.tres"
+
+[deps]
+
+source_file="res://Dialogues/Intro/SalaryManIntro.dialogue"
+dest_files=["res://.godot/imported/SalaryManIntro.dialogue-3077f20b526212a790cfffed009427b0.tres"]
+
+[params]
+
+defaults=true

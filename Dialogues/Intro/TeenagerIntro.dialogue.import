@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cebjeyjtd4euv"
+path="res://.godot/imported/TeenagerIntro.dialogue-b1107e2155ac02b1150b3f62e685a02b.tres"
+
+[deps]
+
+source_file="res://Dialogues/Intro/TeenagerIntro.dialogue"
+dest_files=["res://.godot/imported/TeenagerIntro.dialogue-b1107e2155ac02b1150b3f62e685a02b.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clhoar3gpskae"
+path="res://.godot/imported/LittleChildIntro.dialogue-70d6d25bc330c72d27e4435fd2fa74c8.tres"
+
+[deps]
+
+source_file="res://Dialogues/Intro/LittleChildIntro.dialogue"
+dest_files=["res://.godot/imported/LittleChildIntro.dialogue-70d6d25bc330c72d27e4435fd2fa74c8.tres"]
+
+[params]
+
+defaults=true

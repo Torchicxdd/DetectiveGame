@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://4mlcbiauglb1"
+path="res://.godot/imported/JunkieIntro.dialogue-4c76cfb81666af48c2f9f2901432449c.tres"
+
+[deps]
+
+source_file="res://Dialogues/Intro/JunkieIntro.dialogue"
+dest_files=["res://.godot/imported/JunkieIntro.dialogue-4c76cfb81666af48c2f9f2901432449c.tres"]
+
+[params]
+
+defaults=true

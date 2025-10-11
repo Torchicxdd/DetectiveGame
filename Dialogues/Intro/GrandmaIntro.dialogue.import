@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dvvxr20qpo42r"
+path="res://.godot/imported/GrandmaIntro.dialogue-2ffe33078d12b13f58f90c59e452e53b.tres"
+
+[deps]
+
+source_file="res://Dialogues/Intro/GrandmaIntro.dialogue"
+dest_files=["res://.godot/imported/GrandmaIntro.dialogue-2ffe33078d12b13f58f90c59e452e53b.tres"]
+
+[params]
+
+defaults=true

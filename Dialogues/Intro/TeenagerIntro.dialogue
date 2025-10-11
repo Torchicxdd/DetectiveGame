@@ -1,0 +1,28 @@
+~ start
+
+- "What were you doing that night?"
+	Teenager: It’s Halloween! I was getting treats like everyone else from the neighbourhood!
+	Inner Thoughts: He was, of course, not mentioning the fact that, everyone else, was at least 2 times younger than he was.
+	Inner Thoughts: He did not belong with everyone else.
+	=> start
+	
+- "Where were you at this time when the crime happened?"
+	Teenager:  I was on 32nd street asking for candy.
+	=> start
+	
+- Show the picture of the trash can.
+	Teenager: Bro?
+	=> start
+	
+- Give him the silent treatment.
+	do Global.randomizer.roll(0.5)
+	if Global.randomizer.roll_result == true
+		Teenager: Oh man, is it the rumors? I didn’t do anything to any kid. You don’t even have any proof of me doing anything wrong!
+	else
+		Teenager: … Screw you man!
+	=> start
+	
+- Finish interrogating
+
+You: You'll get what is coming to you!
+=> END

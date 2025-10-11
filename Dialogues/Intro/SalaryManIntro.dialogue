@@ -1,0 +1,29 @@
+~ start
+
+- "What were you doing that night?"
+	Salary Man: I- I was walking my son to get some candy for halloween.
+	Inner Thoughts: He’s not thinking about the question you just asked him. He’s thinking about the wife back home cooking up a storm fully knowing the he was supposed to be back in the house by 9:30.
+	=> start
+	
+- "Where were you at this time when the crime happened?"
+	Salary Man: I was on 34th street, still walking my kids. Who would want to stay on 32nd street anyways? The Grinch at 154 is always giving out shitty candy to my kids and that junkie is always parked on the sidewalk. It’s best to stay away from it.
+	=> start
+
+- Show the picture of the trash can.
+	Salary Man:  A trash can?
+	=> start
+
+- Give him the silent treatment.
+	do Global.randomizer.roll(0.1)
+	if Global.randomizer.roll_result == true
+		Salary Man: H-hey why aren’t you talking… You’re freaking me out. I was just walking my kid for halloween getting candy. I didn’t do anything wrong. Maybe I was a little drunk but who wouldn’t be?
+		Inner Thoughts: He starts rambling about how it hasn't been the best between him and his wife lately and that he is worried that his boss might fire him. He seems to also be behind on his mortgage.
+		Inner Thoughts: You stay completely silent through the entire ramble.
+	else
+		Salary Man: Are you gonna sit there and act like my wife? Well we can both play this game.
+	=> start
+
+- Finish interrogating
+
+You: You'll get what is coming to you!
+=> END
