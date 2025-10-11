@@ -1,0 +1,31 @@
+~ start
+
+- "Do you recognize this piece of evidence?"
+	{{Global.grandma.character_name}}: Dahhh eez mahhin, geev eet’ doo mee!
+	Inner Thoughts: The lady is extending her arms towards the evidence. That is very suspicious. She might be attempting to tamper with it.
+	=> start
+	
+- "Hand the plastic bag?"
+	{{Global.grandma.character_name}}: ... Oh my god, what took you so long to give me my denture!
+	Inner Thoughts: Her denture was in the crime location next to trash can according to the file.
+	=> start
+	
+- "Why was your denture in the crime scene?"
+	{{Global.grandma.character_name}}: One the kids stole it from me when I was giving them treats... We live in a cruel world my dear. 
+	Inner Thoughts: This is suspicious
+	=> start
+	
+- Use the lie detector.
+	do Global.randomizer.roll(0.3)
+	if Global.randomizer.roll_result == true
+		You: You have the taste of a liar {{Global.grandma.character_name}} !
+		{{Global.grandma.character_name}}: Eek! I am sorry, it fell when I went to check on the damage
+	else Global.randomizer.roll_result == false
+		Inner Thoughts: Not lying. Seems it was a false alarm.
+		{{Global.grandma.character_name}}: Eek! You pervert ! I am too old for you ! I'll sue you for sexual harassement! 
+	=> start
+	
+- Finish interrogating.
+
+You: You'll get what is coming to you!
+=> END

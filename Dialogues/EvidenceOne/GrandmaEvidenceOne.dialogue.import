@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dfhocs0wco8ya"
+path="res://.godot/imported/GrandmaEvidenceOne.dialogue-9168193b9441f743a2698dcb80ea274f.tres"
+
+[deps]
+
+source_file="res://Dialogues/EvidenceOne/GrandmaEvidenceOne.dialogue"
+dest_files=["res://.godot/imported/GrandmaEvidenceOne.dialogue-9168193b9441f743a2698dcb80ea274f.tres"]
+
+[params]
+
+defaults=true
