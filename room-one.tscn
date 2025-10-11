@@ -7,9 +7,12 @@
 [node name="room-test" parent="." instance=ExtResource("1_v4o0c")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.7322577, 0.68102765, 0, -0.68102765, 0.7322577, 0, 6.26124, 2.9227233)
+transform = Transform3D(1, 0, 0, 0, 0.7322577, 0.68102765, 0, -0.68102765, 0.7322577, 0, 5.023151, 2.9385533)
+light_specular = 0.0
 shadow_enabled = true
 spot_range = 21.583
+spot_attenuation = -0.25
+spot_angle_attenuation = 1.5157168
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.8426028, 0.53853554, 0, -0.53853554, 0.8426028, 0, 4.04908, 4.961562)
+transform = Transform3D(1, 0, 0, 0, 0.9966901, 0.08129494, 0, -0.08129494, 0.9966901, 0.84563065, 1.2617316, -0.15330696)
