@@ -1,21 +1,21 @@
 ~ start
 
 - "What were you doing that night?"
-	Grandma: Bahhh een mahh daayy, weh dihhn’ awweshh lahh abibbin’ shizhhenss!
+	{{Global.grandma.character_name}}: Bahhh een mahh daayy, weh dihhn’ awweshh lahh abibbin’ shizhhenss!
 	Inner Thoughts: This lady was either out of her mind or clearly you just don’t speak her language. Your detective gut tells you it’s the latter. You’re going to have to learn it by Saturday.
 	=> start
 	
 - "Where were you at this time when the crime happened?"
-	Grandma: Ah wahh a’ hohm waffin’ mah shohh… dju knohh dish guh chee’on hish waff? Tha’ wahn ahh hehh duh nohhzzhh!
+	{{Global.grandma.character_name}}: Ah wahh a’ hohm waffin’ mah shohh… dju knohh dish guh chee’on hish waff? Tha’ wahn ahh hehh duh nohhzzhh!
 	Inner Thoughts: Must be German
 	=> start
 	
 - Show the picture of the trash can.
-	Grandma: Thaah ish clehhly mah naybuhh’sh traaashh caaan… ah reporrr’ed duh crrrahhm, whaahh’m ahh hee’rr in duh firshh plahhssh?
+	{{Global.grandma.character_name}}: Thaah ish clehhly mah naybuhh’sh traaashh caaan… ah reporrr’ed duh crrrahhm, whaahh’m ahh hee’rr in duh firshh plahhssh?
 	=> start
 	
 - Give him the silent treatment.
-	Grandma: Iff yooo’rr jus’ghh gon’uh bee shiddin’ der doin’ nuffin’… c’n ahh a’lee’ sht hahv a shiggarehhh? Dihh ish bahh fer mah nervvshh…
+	{{Global.grandma.character_name}}: Iff yooo’rr jus’ghh gon’uh bee shiddin’ der doin’ nuffin’… c’n ahh a’lee’ sht hahv a shiggarehhh? Dihh ish bahh fer mah nervvshh…
 	=> start
 	
 - Finish interrogating.

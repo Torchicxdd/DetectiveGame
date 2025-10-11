@@ -1,26 +1,26 @@
 ~ start
 
 - "What were you doing that night?"
-	Junkie: I was sitting at my usual spot minding my own business until you guys had to pick me up.
+	{{Global.junkie.character_name}}: I was sitting at my usual spot minding my own business until you guys had to pick me up.
 	Inner Thoughts: His lips look sugar covered from all the candy he was eating that night.
 	Inner Thoughts: Clearly he is annoyed that you disturbed his sugar high.
 	=> start
 	
 - "Where were you at this time when the crime happened?"
-	Junkie: I was sitting on the sidewalk like every other day
+	{{Global.junkie.character_name}}: I was sitting on the sidewalk like every other day
 	=> start
 	
 - Show the picture of the trash can.
-	Junkie: That’s Mr Lambert’s Trash, poor thing…
+	{{Global.junkie.character_name}}: That’s Mr Lambert’s Trash, poor thing…
 	=> start
 	
 - Give him the silent treatment.
 	do Global.randomizer.roll(0.5)
 	if Global.randomizer.roll_result == true
-		Junkie: Oh come on man, I was just minding my own business as usual at my spot. I don’t bother anybody, why are you even bringing me here?
-		Junkie: Is it the trash can? I didn’t see who kicked it down. There were a lot of people walking by the street. Wait, do you think it’s me??? I swear I am innocent.
+		{{Global.junkie.character_name}}: Oh come on man, I was just minding my own business as usual at my spot. I don’t bother anybody, why are you even bringing me here?
+		{{Global.junkie.character_name}}: Is it the trash can? I didn’t see who kicked it down. There were a lot of people walking by the street. Wait, do you think it’s me??? I swear I am innocent.
 	else
-		Junkie: …?
+		{{Global.junkie.character_name}}: …?
 	=> start
 	
 - Finish interrogating

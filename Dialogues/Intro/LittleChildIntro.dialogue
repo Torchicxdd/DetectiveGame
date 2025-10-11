@@ -1,25 +1,25 @@
 ~ start
 
 - "What were you doing that night?"
-	Little Child: CANDY!
+	{{Global.little_child.character_name}}: CANDY!
 	Inner Thoughts: The child is proud that he had such a big haul.
 	=> start
 	
 - "Where were you at this time when the crime happened?"
-	Little Child: CANDY TIME!
+	{{Global.little_child.character_name}}: CANDY TIME!
 	Inner Thoughts: The kid was running the block. Clearly he was on another level when it came to asking for candy. Other peasant kids went door to door saying Trick or Treat. This kid only ever said CANDY!. The parents were obliged, standing in the presence of his greatness. From this day fourth, they only referred to him as Don Candy
 	=> start
 
 - Show the picture of the trash can.
-	Little Child: Bad Candy…
+	{{Global.little_child.character_name}}: Bad Candy…
 	=> start
 
 - Give him the silent treatment.
 	do Global.randomizer.roll(0.5)
 	if Global.randomizer.roll_result == true
-		Little Child: Mister, I didn’t do anything unCANDY, I was just walking around getting some CANDY. Can I go? There’s still CANDY out in the street.
+		{{Global.little_child.character_name}}: Mister, I didn’t do anything unCANDY, I was just walking around getting some CANDY. Can I go? There’s still CANDY out in the street.
 	else
-		Little Child: Candy?
+		{{Global.little_child.character_name}}: Candy?
 	=> start
 
 - Finish interrogating
