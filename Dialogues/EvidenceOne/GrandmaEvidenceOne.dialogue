@@ -35,7 +35,7 @@ else
 		Inner Thoughts: Go ahead. Have a lick.
 		do Global.randomizer.roll(Global.grandma.lie_detector_percentage)
 		if Global.randomizer.roll_result == true
-			Inner Thoughts: Slightly salty and bit condensed.
+			Inner Thoughts: Slightly salty and a bit condensed.
 			You: This is the taste of a liar {{Global.grandma.character_name}}!
 			{{Global.grandma.character_name}}: Eek! I am sorry, it fell when I went to check on the damage
 		else Global.randomizer.roll_result == false
