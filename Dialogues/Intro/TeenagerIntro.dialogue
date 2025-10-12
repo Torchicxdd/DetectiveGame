@@ -8,13 +8,23 @@
 	
 - "Where were you at this time when the crime happened?"
 	{{Global.teenager.character_name}}:  I was on 32nd street asking for candy.
+	Inner Thoughts: Matches up.
 	=> start
 	
 - Show the picture of the trash can.
+	You: I'm sure you know something about this. What can you tell me about it.
 	{{Global.teenager.character_name}}: Bro?
+	Inner Thoughts: These kids. Bro this, bro that. They don't know how to talk with respect, especially to their elders. You need to bro him back.
+	
+	- Bro him back
+		You: Yea bro. You know anything about this trash can bro?
+		{{Global.teenager.character_name}}: Of course I don't bub. That could be anybody's. Just let me leave bro.
+		Inner Thoughts: The punch with which he called you bub. You could see his lips roll into his mouth, sucking in the air and releasing it with brute force all at once. The sound of the letter B will now haunt you in your dreams.
+	- No... leave it at that
+		You: You're lucky I'm a nice guy buster.
 	=> start
 	
-- Give him the silent treatment.
+- Activate Silent Treatment\: {{Global.grandma.silent_treatment_percentage}}%
 	do Global.randomizer.roll(0.5)
 	if Global.randomizer.roll_result == true
 		{{Global.teenager.character_name}}: Oh man, is it the rumors? I didn’t do anything to any kid. You don’t even have any proof of me doing anything wrong!

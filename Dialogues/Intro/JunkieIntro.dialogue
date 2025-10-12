@@ -6,21 +6,27 @@
 	Inner Thoughts: Clearly he is annoyed that you disturbed his sugar high.
 	=> start
 	
-- "Where were you at this time when the crime happened?"
-	{{Global.junkie.character_name}}: I was sitting on the sidewalk like every other day
+- "Where were you at the time of crime?"
+	{{Global.junkie.character_name}}: I was sitting on the sidewalk like every other day.
+	Inner Thoughts: [i]Not[/i] like every other day. He was eating candy today, not doing drugs. Clearly something is up.
 	=> start
 	
 - Show the picture of the trash can.
+	You: I'm sure you are aware what this is. What can you tell me about it?
 	{{Global.junkie.character_name}}: That’s Mr Lambert’s Trash, poor thing…
+	Inner Thoughts: This is an emotional topic for him. Maybe you shouldn't pry at him too much.
 	=> start
 	
-- Give him the silent treatment.
-	do Global.randomizer.roll(0.5)
+- Activate Silent Treatment\: {{Global.junkie.silent_treatment_percentage}}%
+	Inner Thoughts: You activate your auraful powers and give the Junkie the silent treatment. You are clearly emitting authority. You are the man.
+	do Global.randomizer.roll(Global.junkie.silent_treatment_percentage)
 	if Global.randomizer.roll_result == true
 		{{Global.junkie.character_name}}: Oh come on man, I was just minding my own business as usual at my spot. I don’t bother anybody, why are you even bringing me here?
 		{{Global.junkie.character_name}}: Is it the trash can? I didn’t see who kicked it down. There were a lot of people walking by the street. Wait, do you think it’s me??? I swear I am innocent.
+		Inner Thoughts: Ha! He couldn't handle your presence. 1-0
 	else
 		{{Global.junkie.character_name}}: …?
+		Inner Thoughts: Hmmm.... this move has never failed for you before. What kind of drugs could this man be taking?
 	=> start
 	
 - Finish interrogating

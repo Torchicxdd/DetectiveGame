@@ -2,24 +2,29 @@
 
 - "What were you doing that night?"
 	{{Global.little_child.character_name}}: CANDY!
-	Inner Thoughts: The child is proud that he had such a big haul.
+	Inner Thoughts: The child is proud that he had such a big haul of candy. Even as a child, [i]you[/i] could never dream of having as big a bag as he has acquired. This kid is smart.
 	=> start
 	
-- "Where were you at this time when the crime happened?"
+- "Where were you at the time of crime?"
 	{{Global.little_child.character_name}}: CANDY TIME!
-	Inner Thoughts: The kid was running the block. Clearly he was on another level when it came to asking for candy. Other peasant kids went door to door saying Trick or Treat. This kid only ever said CANDY!. The parents were obliged, standing in the presence of his greatness. From this day fourth, they only referred to him as Don Candy
+	Inner Thoughts: The kid runs the block. Clearly he is on another level when it comes to asking for candy. Other peasant kids went door to door saying Trick or Treat. This kid only ever said CANDY!. The parents were obliged, standing in the presence of his greatness. From this day fourth, they only referred to him as Don Candy
 	=> start
 
 - Show the picture of the trash can.
+	You: You see this trash can kid? What can you tell me about it.
 	{{Global.little_child.character_name}}: Bad Candy…
+	Inner Thoughts: He is not wrong.
 	=> start
 
-- Give him the silent treatment.
-	do Global.randomizer.roll(0.5)
+- Activate Silent Treatment\: {{Global.little_child.silent_treatment_percentage}}%
+	Inner Thoughts: This kid does not understand the situation he is in. You must use your ultimate move to put him in his place.
+	do Global.randomizer.roll(Global.little_child.silent_treatment_percentage)
 	if Global.randomizer.roll_result == true
 		{{Global.little_child.character_name}}: Mister, I didn’t do anything unCANDY, I was just walking around getting some CANDY. Can I go? There’s still CANDY out in the street.
+		Inner Thoughts: There you go. You taught that kid who was boss. What a pathetic punk.
 	else
 		{{Global.little_child.character_name}}: Candy?
+		Inner Thoughts: No not candy! Authority!
 	=> start
 
 - Finish interrogating

@@ -2,25 +2,44 @@
 
 - "What were you doing that night?"
 	{{Global.salaryman.character_name}}: I- I was walking my son to get some candy for halloween.
-	Inner Thoughts: He’s not thinking about the question you just asked him. He’s thinking about the wife back home cooking up a storm fully knowing the he was supposed to be back in the house by 9:30.
+	Inner Thoughts: He’s not thinking about the question you just asked him. He’s thinking about the wife back home cooking up a storm fully knowing the he was supposed to be back home by 9:30.
 	=> start
 	
 - "Where were you at this time when the crime happened?"
 	{{Global.salaryman.character_name}}: I was on 34th street, still walking my kids. Who would want to stay on 32nd street anyways? The Grinch at 154 is always giving out shitty candy to my kids and that junkie is always parked on the sidewalk. It’s best to stay away from it.
+	Inner Thoughts: You've heard about this abominable Grinch before but have never met him face to face. He may be your first true rival.
+	
+	~ grinch
+	- "Who is this Grinch you speak of? How can I meet them?"
+		Inner Thoughts: You ask this question with the curiosity of a three year old. You want to meet this person so badly.
+		{{Global.salaryman.character_name}}: I'm talking about the hag. You literally brought her in.
+		Inner Thoughts: Oh. The Grinch is not who you thought it was. The Grinch is sadly [i]not[/i] your rival.
+		=> grinch
+	- "Shitty candy? What type of candy does the Grinch give out?"
+		{{Global.salaryman.character_name}}: She's always giving out these stupid things to my kids, like raisins and hard taffy. She even gave out potato salad one year.
+		Inner Thoughts: The Grinch truly is evil.
+		=> grinch
+	- "Interesting, this Grinch must truly be evil." [End Dialogue]
 	=> start
 
 - Show the picture of the trash can.
-	{{Global.salaryman.character_name}}:  A trash can?
+	You: What can you tell me about this? This is of important matters.
+	{{Global.salaryman.character_name}}: A trash can?
+	You: Yes a [i]trash can[/i].
+	{{Global.salaryman.character_name}}: It's a trash can.
+	Inner Thoughts: We're getting nowhere with this.
 	=> start
 
-- Give him the silent treatment.
-	do Global.randomizer.roll(0.1)
+- Activate Silent Treatment\: {{Global.salaryman.silent_treatment_percentage}}%
+	Inner Thoughts: He thought his boss was rough on him. You cannot wait to show him what real disappointment looks like.
+	do Global.randomizer.roll(Global.salaryman.silent_treatment_percentage)
 	if Global.randomizer.roll_result == true
 		{{Global.salaryman.character_name}}: H-hey why aren’t you talking… You’re freaking me out. I was just walking my kid for halloween getting candy. I didn’t do anything wrong. Maybe I was a little drunk but who wouldn’t be?
 		Inner Thoughts: He starts rambling about how it hasn't been the best between him and his wife lately and that he is worried that his boss might fire him. He seems to also be behind on his mortgage.
-		Inner Thoughts: You stay completely silent through the entire ramble.
+		Inner Thoughts: You stay completely silent through the entire ramble, bathing in your success.
 	else
-		{{Global.salaryman.character_name}}: Are you gonna sit there and act like my wife? Well we can both play this game.
+		{{Global.salaryman.character_name}}: Are you gonna sit there and act like my wife? We can both play that game.
+		Inner Thoughts: This is not a game to you. This is real life, you are hard-boiled. Pick yourself up from failure you just experienced.
 	=> start
 
 - Finish interrogating
