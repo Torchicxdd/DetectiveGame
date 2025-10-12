@@ -2,6 +2,7 @@ extends Node
 
 var randomizer: Randomizer = Randomizer.new()
 
+var detective: Detective = Detective.new()
 var grandma: Character = Grandma.new()
 var junkie: Character = Junkie.new()
 var little_child: Character = LittleChild.new()
