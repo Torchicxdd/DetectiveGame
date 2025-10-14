@@ -18,3 +18,5 @@ offset_top = 121.72
 offset_right = 590.0
 offset_bottom = 876.72
 texture = ExtResource("1_l1oye")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
