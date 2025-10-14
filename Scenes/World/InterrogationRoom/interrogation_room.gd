@@ -1,0 +1,1 @@
+class_name InterrogationRoom extends Node2D
