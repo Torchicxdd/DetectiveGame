@@ -1,4 +1,4 @@
-class_name LittleChild extends Character
+class_name DonCandy extends Character
 
 func _init() -> void:
 	character_name = "Little Child"

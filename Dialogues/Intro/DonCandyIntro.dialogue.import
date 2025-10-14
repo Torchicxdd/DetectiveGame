@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clhoar3gpskae"
+path="res://.godot/imported/DonCandyIntro.dialogue-d55315b13befe4d04a8ed7a81afa144a.tres"
+
+[deps]
+
+source_file="res://Dialogues/Intro/DonCandyIntro.dialogue"
+dest_files=["res://.godot/imported/DonCandyIntro.dialogue-d55315b13befe4d04a8ed7a81afa144a.tres"]
+
+[params]
+
+defaults=true

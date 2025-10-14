@@ -1,0 +1,39 @@
+~ start
+
+if Global.doncandy.has_investigated_first_time == false
+	Inner Thoughts: He was the one you were most eager to meet out of all the suspects. You see something in him that you don’t see in other children his age. You see desire and hunger for greatness.
+	Inner Thoughts: The trash can fell not on its own but because this little guy kicked it when he went to execute his master plan. You are the only one who can uncover his darkest secret.
+	set Global.doncandy.has_investigated_first_time = true
+
+~ questions
+- "What were you doing that night?"
+	{{Global.doncandy.character_name}}: CANDY!
+	Inner Thoughts: The child is proud that he had such a big haul of candy. Even as a child, [i]you[/i] could never dream of having as big a bag as he has acquired. This kid is smart.
+	=> questions
+	
+- "Where were you at the time of the crime?"
+	{{Global.doncandy.character_name}}: CANDY TIME!
+	Inner Thoughts: The kid runs the block. Clearly he is on another level when it comes to asking for candy. Other peasant kids went door to door saying Trick or Treat. This kid only ever said CANDY!. The parents were obliged, standing in the presence of his greatness.
+	=> questions
+
+- Show the picture of the trash can.
+	You: You see this trash can kid? What can you tell me about it.
+	{{Global.doncandy.character_name}}: Bad Candy…
+	Inner Thoughts: He is not wrong.
+	=> questions
+
+- Activate Silent Treatment\: {{Global.doncandy.silent_treatment_percentage}}%
+	Inner Thoughts: This kid does not understand the situation he is in. You must use your ultimate move to put him in his place.
+	do Global.randomizer.roll(Global.doncandy.silent_treatment_percentage)
+	if Global.randomizer.roll_result == true
+		{{Global.doncandy.character_name}}: Mister, I didn’t do anything unCANDY, I was just walking around getting some CANDY. Can I go? There’s still CANDY out in the street.
+		Inner Thoughts: There you go. You taught that kid who was boss. What a pathetic punk.
+	else
+		{{Global.doncandy.character_name}}: Candy?
+		Inner Thoughts: No not candy! Authority!
+	=> questions
+
+- Finish interrogating
+
+You: You'll get what is coming to you!
+=> END
