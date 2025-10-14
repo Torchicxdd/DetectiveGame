@@ -1,15 +1,20 @@
 class_name Main extends Node
 
+# Change this scene to load a specific scene first
 var first_scene = preload("res://Scenes/World/InterrogationRoom/InterrogationRoom.tscn").instantiate()
 
-func _ready() -> void:
+func _init() -> void:
 	Global.main = self
+
+func _ready() -> void:
 	addWorldScene(first_scene)
 	
 # World scene helper functions
 func addWorldScene(scene: Node2D) -> void:
 	if (scene not in $World.get_children()):
 		$World.add_child(scene)
+	else:
+		scene.visible = true
 	
 func removeWorldScene(scene: Node2D) -> void:
 	if (scene in $World.get_children()):
@@ -31,6 +36,8 @@ func deleteWorldScene(scene: Node2D) -> void:
 func addGUIScene(scene: Control) -> void:
 	if (scene not in $GUI.get_children()):
 		$GUI.add_child(scene)
+	else:
+		scene.visible = true
 	
 func removeGUIScene(scene: Control) -> void:
 	if (scene in $GUI.get_children()):
