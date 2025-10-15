@@ -17,14 +17,19 @@ func _open_character_page(tabs_num: int) -> void:
 	match tabs_num:
 		0:
 			$Tab1.texture_normal = active_tab
+			SignalBus.emit_signal("set_character_info", Global.grandma)
 		1:
 			$Tab2.texture_normal = active_tab
+			SignalBus.emit_signal("set_character_info", Global.little_child)
 		2:
 			$Tab3.texture_normal = active_tab
+			SignalBus.emit_signal("set_character_info", Global.junkie)
 		3:
 			$Tab4.texture_normal = active_tab
+			SignalBus.emit_signal("set_character_info", Global.salaryman)
 		4:
 			$Tab5.texture_normal = active_tab
+			SignalBus.emit_signal("set_character_info", Global.teenager)
 	
 	set_tab_names()
 
