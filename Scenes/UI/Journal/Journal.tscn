@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://5uj14p4e0jgm"]
+[gd_scene load_steps=6 format=3 uid="uid://5uj14p4e0jgm"]
 
 [ext_resource type="Texture2D" uid="uid://cee2ffn1yuw0v" path="res://Scenes/UI/Journal/journal_background.png" id="1_l1oye"]
 [ext_resource type="Script" uid="uid://fi1v4k17o07f" path="res://Scenes/UI/Journal/journal.gd" id="1_lbjrh"]
+[ext_resource type="Texture2D" uid="uid://dfwena8ewvxwp" path="res://Scenes/UI/Journal/active_tab.png" id="3_jh6tv"]
+[ext_resource type="Script" uid="uid://dfcujpfk8e6pa" path="res://Scenes/UI/Journal/journal_tabs.gd" id="3_nvdlp"]
+[ext_resource type="Texture2D" uid="uid://xmxq3dpq4ydx" path="res://Scenes/UI/Journal/inactive_tab.png" id="4_v85dr"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -13,10 +16,131 @@ grow_vertical = 2
 script = ExtResource("1_lbjrh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
+layout_mode = 1
+offset_left = 20.62
 offset_top = 121.72
-offset_right = 590.0
-offset_bottom = 876.72
+offset_right = 553.62
+offset_bottom = 802.72
 texture = ExtResource("1_l1oye")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 528.5
+offset_top = 191.57
+offset_right = 564.5
+offset_bottom = 762.57
+size_flags_horizontal = 8
+script = ExtResource("3_nvdlp")
+
+[node name="Tab1" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_jh6tv")
+
+[node name="Label" type="Label" parent="VBoxContainer/Tab1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.800293
+offset_top = 0.9345382
+offset_right = 108.88272
+offset_bottom = -74.87991
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tab2" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_v85dr")
+
+[node name="Label" type="Label" parent="VBoxContainer/Tab2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.800293
+offset_top = 0.9345382
+offset_right = 108.88272
+offset_bottom = -74.87991
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tab3" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_v85dr")
+
+[node name="Label" type="Label" parent="VBoxContainer/Tab3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.800293
+offset_top = 0.9345382
+offset_right = 108.88272
+offset_bottom = -74.87991
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tab4" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_v85dr")
+
+[node name="Label" type="Label" parent="VBoxContainer/Tab4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.800293
+offset_top = 0.9345382
+offset_right = 108.88272
+offset_bottom = -74.87991
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tab5" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_v85dr")
+
+[node name="Label" type="Label" parent="VBoxContainer/Tab5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.800293
+offset_top = 0.9345382
+offset_right = 108.88272
+offset_bottom = -74.87991
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Tab1" to="." method="_on_tab_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tab2" to="." method="_on_tab_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tab3" to="." method="_on_tab_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tab4" to="." method="_on_tab_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tab5" to="." method="_on_tab_5_pressed"]
