@@ -38,8 +38,7 @@ func _set_character_info(character: Character) -> void:
 func add_evidence_items(evidence_items: Array[Evidence]) -> void:
 	for i in evidence_items:
 		var scene = evidence_scene.instantiate() as EvidenceItem
-		scene.set_item_image(i.image)
-		scene.scale = Vector2(0.338, 0.338)
+		scene.set_item_image_and_name(i.image,i.ItemName)
 		$EvidenceGrid.add_child(scene)
 
 func remove_evidence_items() -> void:
