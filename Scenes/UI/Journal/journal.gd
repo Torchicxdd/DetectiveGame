@@ -1,5 +1,7 @@
 class_name Journal extends Control
 
+var evidence_scene = preload("res://Scenes/UI/EvidenceItem/EvidenceItem.tscn")
+
 func _ready() -> void:
 	SignalBus.connect("close_journal", Callable(self, "_close_journal"))
 	SignalBus.connect("set_character_info", Callable(self, "_set_character_info"))
@@ -30,3 +32,17 @@ func _set_character_info(character: Character) -> void:
 	$CharacterInfo/HBoxContainer3/CustomHeight.text = str(character.height) + " " + "cm"
 	$CharacterInfo/HBoxContainer4/CustomGender.text = character.gender
 	$CharacterInfo/HBoxContainer5/CustomHairColor.text = character.hair_color
+	remove_evidence_items()
+	add_evidence_items(character.evidence_list)
+
+func add_evidence_items(evidence_items: Array[Evidence]) -> void:
+	for i in evidence_items:
+		var scene = evidence_scene.instantiate() as EvidenceItem
+		scene.set_item_image(i.image)
+		scene.scale = Vector2(0.338, 0.338)
+		$EvidenceGrid.add_child(scene)
+
+func remove_evidence_items() -> void:
+	for item in $EvidenceGrid.get_children():
+		$EvidenceGrid.remove_child(item)
+		item.queue_free()

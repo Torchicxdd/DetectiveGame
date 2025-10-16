@@ -272,6 +272,14 @@ offset_right = 498.93
 offset_bottom = 407.77
 texture = ExtResource("11_gm7al")
 
+[node name="EvidenceGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 427.0
+offset_right = 498.0
+offset_bottom = 769.4
+columns = 3
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Tab1" to="." method="_on_tab_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Tab2" to="." method="_on_tab_2_pressed"]

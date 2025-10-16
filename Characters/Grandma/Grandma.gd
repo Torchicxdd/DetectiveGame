@@ -1,6 +1,7 @@
 class_name Grandma extends Character
 
 func _init() -> void:
+	super()
 	character_name = "Grandma"
 	age = 78
 	height = 157
