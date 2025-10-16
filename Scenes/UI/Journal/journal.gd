@@ -33,13 +33,25 @@ func _set_character_info(character: Character) -> void:
 	$CharacterInfo/HBoxContainer4/CustomGender.text = character.gender
 	$CharacterInfo/HBoxContainer5/CustomHairColor.text = character.hair_color
 	remove_evidence_items()
-	add_evidence_items(character.evidence_list)
+	add_evidence_items(character)
 
-func add_evidence_items(evidence_items: Array[Evidence]) -> void:
-	for i in evidence_items:
-		var scene = evidence_scene.instantiate() as EvidenceItem
-		scene.set_item_image_and_name(i.image,i.ItemName)
-		$EvidenceGrid.add_child(scene)
+func add_evidence_items(character: Character) -> void:
+	var counter = 0 
+	for i in Items.items_list:
+		if i.is_unlocked:
+			if i.relations.has(character):
+				var scene = evidence_scene.instantiate() as EvidenceItem
+				if (i.relations.get(character)):
+					scene.set_item_image_and_name(i.image,i.ItemName)
+				$EvidenceGrid.add_child(scene)
+				counter += 1
+	
+	if (counter < 9):
+		while (counter < 9):
+			var scene = evidence_scene.instantiate() as EvidenceItem
+			scene.modulate.a = 0.0
+			$EvidenceGrid.add_child(scene)
+			counter += 1
 
 func remove_evidence_items() -> void:
 	for item in $EvidenceGrid.get_children():

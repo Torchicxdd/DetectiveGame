@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://Globals/Global.gd"
 SignalBus="*res://Globals/SignalBus.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Items="*res://Globals/Items.gd"
 
 [display]
 
