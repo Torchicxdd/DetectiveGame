@@ -1,21 +1,22 @@
 [gd_scene load_steps=3 format=3 uid="uid://eunpuo5b0opd"]
 
-[ext_resource type="Script" uid="uid://c14cvrr1qidcw" path="res://Scenes/UI/Dialogue/dialogue_item.gd" id="1_7tpy0"]
-[ext_resource type="Theme" uid="uid://bud7sr1v2j7hg" path="res://Themes/ItalicCrimsonPro.tres" id="1_omybx"]
+[ext_resource type="Script" uid="uid://c14cvrr1qidcw" path="res://Scenes/UI/Dialogue/dialogue_item.gd" id="1_wdyrm"]
+[ext_resource type="Theme" uid="uid://bud7sr1v2j7hg" path="res://Themes/ItalicCrimsonPro.tres" id="2_rgao2"]
 
 [node name="DialogueItem" type="VBoxContainer"]
 anchors_preset = -1
 anchor_right = 0.19000001
 offset_right = 0.19998169
-script = ExtResource("1_7tpy0")
+theme_override_constants/separation = 14
+script = ExtResource("1_wdyrm")
 
 [node name="Character" type="Label" parent="."]
 layout_mode = 2
-theme = ExtResource("1_omybx")
+theme = ExtResource("2_rgao2")
 theme_override_colors/font_color = Color(0.4862745, 0.4862745, 0.4862745, 1)
 
 [node name="Dialogue" type="RichTextLabel" parent="."]
 layout_mode = 2
-theme = ExtResource("1_omybx")
+theme = ExtResource("2_rgao2")
 theme_override_colors/default_color = Color(0.91764706, 0.91764706, 0.91764706, 1)
 fit_content = true
