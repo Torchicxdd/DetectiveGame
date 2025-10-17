@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ci3ljaluegrgk" path="res://Scenes/UI/EvidenceItem/evidence_item.gd" id="1_qapms"]
 
 [sub_resource type="SystemFont" id="SystemFont_upoh7"]
+subpixel_positioning = 0
 
 [node name="EvidenceItem" type="Control"]
 layout_mode = 3

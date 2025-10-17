@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://qxsvm28ij5sf"]
+
+[ext_resource type="Shader" uid="uid://blic7psylu8rp" path="res://Shaders/CRTShader.gdshader" id="1_sa4sy"]
+
+[resource]
+shader = ExtResource("1_sa4sy")
+shader_parameter/brightnessMult = 4.0
+shader_parameter/wiggleMult = 0.005
+shader_parameter/chromaticAberrationOffset = 0.001

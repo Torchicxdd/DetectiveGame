@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3nm6fijc7b38"]
+
+[ext_resource type="Texture2D" uid="uid://c0hco324vclok" path="res://Scenes/UI/ItemViewer/background.png" id="1_cvd24"]
+[ext_resource type="Script" uid="uid://bkunsylclq4dq" path="res://Scenes/UI/ItemViewer/item_viewer.gd" id="1_fvytp"]
+[ext_resource type="Texture2D" uid="uid://cayq08iq6bdo7" path="res://Scenes/UI/ItemViewer/tv_background.png" id="2_boqq0"]
+[ext_resource type="Material" uid="uid://qxsvm28ij5sf" path="res://Materials/CRTMaterial.tres" id="4_k8l1a"]
+
+[node name="ItemViewer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fvytp")
+
+[node name="CRTDisplay" type="TextureRect" parent="."]
+material = ExtResource("4_k8l1a")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.082
+anchor_right = 0.768
+anchor_bottom = 0.929
+offset_left = -0.80999756
+offset_top = 0.13999176
+offset_right = 0.26989746
+offset_bottom = 0.38000488
+
+[node name="ContentViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1347, 915)
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="ContentViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_boqq0")
+
+[node name="EvidenceGrid" type="GridContainer" parent="ContentViewport"]
+anchors_preset = -1
+anchor_left = 0.172
+anchor_top = 0.15400001
+anchor_right = 0.82800007
+anchor_bottom = 0.846
+offset_left = 271.266
+offset_top = 151.167
+offset_right = 271.6339
+offset_bottom = 150.357
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 17
+columns = 4
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.037
+anchor_right = 0.96300006
+anchor_bottom = 0.96300006
+offset_left = 11.610001
+offset_top = 6.5300026
+offset_right = 10.689941
+offset_bottom = 6.449951
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cvd24")
