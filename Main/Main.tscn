@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://4e35o06378gt"]
+[gd_scene load_steps=5 format=3 uid="uid://4e35o06378gt"]
 
 [ext_resource type="Script" uid="uid://cs1bomoolnt6q" path="res://Main/main.gd" id="1_83ytx"]
 [ext_resource type="Script" uid="uid://b4bnti47qm4bo" path="res://Main/world.gd" id="2_amygn"]
 [ext_resource type="Script" uid="uid://bt00val0cod17" path="res://Main/gui.gd" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://dy6ti4ss16o8j" path="res://Scenes/World/InterrogationRoom/InterrogationRoom.tscn" id="3_u2i7p"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_83ytx")
 
 [node name="World" type="Node2D" parent="."]
 script = ExtResource("2_amygn")
+
+[node name="InterrogationRoom" parent="World" instance=ExtResource("3_u2i7p")]
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3

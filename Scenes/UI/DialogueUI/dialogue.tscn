@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://jah1w56vfgrk"]
+
+[ext_resource type="Texture2D" uid="uid://uou8e5iog0or" path="res://Scenes/UI/DialogueUI/DialogueBackground.png" id="1_gipuw"]
+[ext_resource type="Script" uid="uid://boj704i1icudu" path="res://Scenes/UI/DialogueUI/scroll.gd" id="2_l7iw2"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -293.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_gipuw")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -462.0
+offset_top = 33.0
+offset_right = -21.0
+offset_bottom = -240.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("2_l7iw2")
+
+[node name="DialogueText" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -8,7 +8,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	addWorldScene(first_scene)
-	
+	SignalBus.emit_signal("add_dialogue_text", "Grandma")
 # World scene helper functions
 func addWorldScene(scene: Node2D) -> void:
 	if (scene not in $World.get_children()):
