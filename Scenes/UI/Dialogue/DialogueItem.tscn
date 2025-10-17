@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://eunpuo5b0opd"]
+
+[node name="DialogueItem" type="VBoxContainer"]
