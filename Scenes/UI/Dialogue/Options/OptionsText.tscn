@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://jgtjflno1guc"]
+
+[ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="1_m304o"]
+[ext_resource type="Script" uid="uid://dh4k8rqant8yr" path="res://Scenes/UI/Dialogue/Options/options_text.gd" id="2_7actb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ij6b3"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 20.0
+content_margin_bottom = 6.0
+bg_color = Color(0.5568628, 0.5568628, 0.5568628, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7actb"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 20.0
+content_margin_bottom = 6.0
+bg_color = Color(0.30588236, 0.30588236, 0.30588236, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m304o"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 20.0
+content_margin_bottom = 6.0
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0kfd"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="OptionsText" type="Button"]
+offset_right = 205.0
+offset_bottom = 20.0
+theme = ExtResource("1_m304o")
+theme_override_colors/font_color = Color(0.5568628, 0.5568628, 0.5568628, 1)
+theme_override_colors/font_focus_color = Color(0.5568628, 0.5568628, 0.5568628, 1)
+theme_override_constants/line_spacing = 8
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ij6b3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7actb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m304o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w0kfd")
+alignment = 0
+script = ExtResource("2_7actb")

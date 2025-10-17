@@ -15,7 +15,6 @@ layout_mode = 2
 theme = ExtResource("3_rsnqj")
 theme_override_colors/font_color = Color(0.4862745, 0.4862745, 0.4862745, 1)
 theme_override_font_sizes/font_size = 18
-text = "Salaryman"
 
 [node name="Dialogue" type="RichTextLabel" parent="."]
 layout_mode = 2
@@ -23,5 +22,4 @@ theme = ExtResource("3_rsnqj")
 theme_override_colors/default_color = Color(0.91764706, 0.91764706, 0.91764706, 1)
 theme_override_constants/line_separation = 8
 theme_override_font_sizes/normal_font_size = 16
-text = "I- I was walking my son to get some candy for halloween. Inner Thoughts: He’s not thinking about the question you just asked him. He’s thinking about the wife back home cooking up a storm fully knowing the he was supposed to be back home by 9:30."
 fit_content = true
