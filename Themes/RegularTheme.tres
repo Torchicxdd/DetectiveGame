@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://7x0dtol1wfud"]
+
+[ext_resource type="FontFile" uid="uid://vx2ovhdcqxsd" path="res://Themes/Lexend-Regular.ttf" id="1_xvnm0"]
+
+[resource]
+default_font = ExtResource("1_xvnm0")
+default_font_size = 12

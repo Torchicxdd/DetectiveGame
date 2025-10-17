@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eg3ai8q3in3o"
-path="res://.godot/imported/BeerEvidence.png-50556cec405279d423677d68ae5b45a2.ctex"
+uid="uid://cxaqki5b1xbwj"
+path="res://.godot/imported/JunkieHeadshot.png-f7735861d06a6d99cef8001d034afa16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/BeerEvidence.png"
-dest_files=["res://.godot/imported/BeerEvidence.png-50556cec405279d423677d68ae5b45a2.ctex"]
+source_file="res://Characters/Junkie/JunkieHeadshot.png"
+dest_files=["res://.godot/imported/JunkieHeadshot.png-f7735861d06a6d99cef8001d034afa16.ctex"]
 
 [params]
 

@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://5uj14p4e0jgm"]
+[gd_scene load_steps=11 format=3 uid="uid://5uj14p4e0jgm"]
 
-[ext_resource type="Texture2D" uid="uid://cee2ffn1yuw0v" path="res://Scenes/UI/Journal/journal_background.png" id="1_l1oye"]
-[ext_resource type="Script" uid="uid://fi1v4k17o07f" path="res://Scenes/UI/Journal/journal.gd" id="1_lbjrh"]
-[ext_resource type="Texture2D" uid="uid://dfwena8ewvxwp" path="res://Scenes/UI/Journal/active_tab.png" id="3_jh6tv"]
-[ext_resource type="Script" uid="uid://dfcujpfk8e6pa" path="res://Scenes/UI/Journal/journal_tabs.gd" id="3_nvdlp"]
-[ext_resource type="Texture2D" uid="uid://xmxq3dpq4ydx" path="res://Scenes/UI/Journal/inactive_tab.png" id="4_v85dr"]
+[ext_resource type="Script" uid="uid://fi1v4k17o07f" path="res://Scenes/UI/Journal/journal.gd" id="1_ri2co"]
+[ext_resource type="Texture2D" uid="uid://cee2ffn1yuw0v" path="res://Scenes/UI/Journal/journal_background.png" id="2_oamcm"]
+[ext_resource type="Script" uid="uid://dfcujpfk8e6pa" path="res://Scenes/UI/Journal/journal_tabs.gd" id="3_luoye"]
+[ext_resource type="Texture2D" uid="uid://dfwena8ewvxwp" path="res://Scenes/UI/Journal/active_tab.png" id="4_kqxqc"]
+[ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="5_obyok"]
+[ext_resource type="Texture2D" uid="uid://xmxq3dpq4ydx" path="res://Scenes/UI/Journal/inactive_tab.png" id="6_02n6t"]
+[ext_resource type="Texture2D" uid="uid://dnl7ra7cjmefp" path="res://Scenes/UI/Journal/top_secret.png" id="7_djeef"]
+[ext_resource type="Texture2D" uid="uid://djvl843px0r6y" path="res://Scenes/UI/Journal/tape.png" id="8_2tvdk"]
+[ext_resource type="Theme" uid="uid://bq6s1ll3u64e1" path="res://Themes/MediumTheme.tres" id="8_54433"]
+[ext_resource type="Texture2D" uid="uid://bqxeb87bdli6k" path="res://Scenes/UI/Journal/evidence.png" id="11_gm7al"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -13,15 +18,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lbjrh")
+script = ExtResource("1_ri2co")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Paper" type="TextureRect" parent="."]
 layout_mode = 1
 offset_left = 20.62
 offset_top = 121.72
 offset_right = 553.62
 offset_bottom = 802.72
-texture = ExtResource("1_l1oye")
+texture = ExtResource("2_oamcm")
 stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -31,11 +36,11 @@ offset_top = 191.57
 offset_right = 564.5
 offset_bottom = 762.57
 size_flags_horizontal = 8
-script = ExtResource("3_nvdlp")
+script = ExtResource("3_luoye")
 
 [node name="Tab1" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_jh6tv")
+texture_normal = ExtResource("4_kqxqc")
 
 [node name="Label" type="Label" parent="VBoxContainer/Tab1"]
 layout_mode = 1
@@ -49,14 +54,16 @@ offset_bottom = -74.87991
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+theme = ExtResource("5_obyok")
 theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
 
 [node name="Tab2" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_v85dr")
+texture_normal = ExtResource("6_02n6t")
 
 [node name="Label" type="Label" parent="VBoxContainer/Tab2"]
 layout_mode = 1
@@ -70,14 +77,16 @@ offset_bottom = -74.87991
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+theme = ExtResource("5_obyok")
 theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
 
 [node name="Tab3" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_v85dr")
+texture_normal = ExtResource("6_02n6t")
 
 [node name="Label" type="Label" parent="VBoxContainer/Tab3"]
 layout_mode = 1
@@ -91,14 +100,16 @@ offset_bottom = -74.87991
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+theme = ExtResource("5_obyok")
 theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
 
 [node name="Tab4" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_v85dr")
+texture_normal = ExtResource("6_02n6t")
 
 [node name="Label" type="Label" parent="VBoxContainer/Tab4"]
 layout_mode = 1
@@ -112,14 +123,16 @@ offset_bottom = -74.87991
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+theme = ExtResource("5_obyok")
 theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
 
 [node name="Tab5" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_v85dr")
+texture_normal = ExtResource("6_02n6t")
 
 [node name="Label" type="Label" parent="VBoxContainer/Tab5"]
 layout_mode = 1
@@ -133,10 +146,141 @@ offset_bottom = -74.87991
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+theme = ExtResource("5_obyok")
 theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
+
+[node name="TopSecret" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 362.56
+offset_top = 197.32
+offset_right = 521.56
+offset_bottom = 356.32
+texture = ExtResource("7_djeef")
+
+[node name="CharacterImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 90.93
+offset_top = 214.69
+offset_right = 206.03
+offset_bottom = 344.47
+
+[node name="Tape1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 82.12
+offset_top = 206.57
+offset_right = 216.12
+offset_bottom = 354.57
+texture = ExtResource("8_2tvdk")
+
+[node name="CharacterInfo" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 222.0
+offset_right = 274.0
+offset_bottom = 262.0
+theme_override_constants/separation = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="NameLabel" type="Label" parent="CharacterInfo/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+text = "NAME"
+
+[node name="CustomName" type="Label" parent="CharacterInfo/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.7529412, 0.1764706, 0.1764706, 1)
+uppercase = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="AgeLabel" type="Label" parent="CharacterInfo/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+text = "AGE"
+
+[node name="CustomAge" type="Label" parent="CharacterInfo/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.7529412, 0.1764706, 0.1764706, 1)
+uppercase = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="HeightLabel" type="Label" parent="CharacterInfo/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+text = "HEIGHT"
+
+[node name="CustomHeight" type="Label" parent="CharacterInfo/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.7529412, 0.1764706, 0.1764706, 1)
+uppercase = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="GenderLabel" type="Label" parent="CharacterInfo/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+text = "GENDER"
+
+[node name="CustomGender" type="Label" parent="CharacterInfo/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.7529412, 0.1764706, 0.1764706, 1)
+uppercase = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="HairColorLabel" type="Label" parent="CharacterInfo/HBoxContainer5"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+text = "HAIR COLOR"
+
+[node name="CustomHairColor" type="Label" parent="CharacterInfo/HBoxContainer5"]
+layout_mode = 2
+theme = ExtResource("8_54433")
+theme_override_colors/font_color = Color(0.7529412, 0.1764706, 0.1764706, 1)
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 90.93
+offset_top = 367.77
+offset_right = 498.93
+offset_bottom = 407.77
+texture = ExtResource("11_gm7al")
+
+[node name="EvidenceGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 427.0
+offset_right = 498.0
+offset_bottom = 769.4
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 17
+columns = 3
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Tab1" to="." method="_on_tab_1_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eg3ai8q3in3o"
-path="res://.godot/imported/BeerEvidence.png-50556cec405279d423677d68ae5b45a2.ctex"
+uid="uid://bk473nef6ue7j"
+path="res://.godot/imported/LittleChildHeadshot.png-932439f8700ba060bc332960336b8e83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/BeerEvidence.png"
-dest_files=["res://.godot/imported/BeerEvidence.png-50556cec405279d423677d68ae5b45a2.ctex"]
+source_file="res://Characters/LittleChild/LittleChildHeadshot.png"
+dest_files=["res://.godot/imported/LittleChildHeadshot.png-932439f8700ba060bc332960336b8e83.ctex"]
 
 [params]
 
