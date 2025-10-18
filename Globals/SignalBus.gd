@@ -16,3 +16,4 @@ signal choose_option(option: DialogueResponse)
 signal end_dialogue()
 
 signal start_dialogue_reader(dialogue_resource: DialogueResource)
+signal process_chosen_option(option: DialogueResponse)

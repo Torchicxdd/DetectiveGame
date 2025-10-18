@@ -8,7 +8,7 @@ if Global.doncandy.has_investigated_first_time == false
 ~ questions
 - "What were you doing that night?"
 	{{Global.doncandy.character_name}}: CANDY!
-	Inner Thoughts: The child is proud that he had such a big haul of candy. Even as a child, [i]you[/i] could never dream of having as big a bag as he has acquired. This kid is smart.
+	Inner Thoughts: The child is proud that he had such a big haul of candy. Even as a child, you could never dream of having as big a bag as he has acquired. This kid is smart.
 	=> questions
 	
 - "Where were you at the time of the crime?"

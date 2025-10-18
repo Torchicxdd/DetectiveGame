@@ -15,3 +15,6 @@ var height: int
 var gender: String
 var hair_color: String
 var headshot: Texture2D
+
+# Resources
+var intro_resource: DialogueResource

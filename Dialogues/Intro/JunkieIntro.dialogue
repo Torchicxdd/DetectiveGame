@@ -8,7 +8,7 @@
 	
 - "Where were you at the time of crime?"
 	{{Global.junkie.character_name}}: I was sitting on the sidewalk like every other day.
-	Inner Thoughts: [i]Not[/i] like every other day. He was eating candy today, not doing drugs. Clearly something is up.
+	Inner Thoughts: Not like every other day. He was eating candy today, not doing drugs. Clearly something is up.
 	=> start
 	
 - Show the picture of the trash can.

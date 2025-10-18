@@ -13,7 +13,7 @@
 	- "Who is this Grinch you speak of? How can I meet them?"
 		Inner Thoughts: You ask this question with the curiosity of a three year old. You want to meet this person so badly.
 		{{Global.salaryman.character_name}}: I'm talking about the hag. You literally brought her in.
-		Inner Thoughts: Oh. The Grinch is not who you thought it was. The Grinch is sadly [i]not[/i] your rival.
+		Inner Thoughts: Oh. The Grinch is not who you thought it was. The Grinch is sadly not your rival.
 		=> grinch
 	- "Shitty candy? What type of candy does the Grinch give out?"
 		{{Global.salaryman.character_name}}: She's always giving out these stupid things to my kids, like raisins and hard taffy. She even gave out potato salad one year.
@@ -25,7 +25,7 @@
 - Show the picture of the trash can.
 	You: What can you tell me about this? This is of important matters.
 	{{Global.salaryman.character_name}}: A trash can?
-	You: Yes a [i]trash can[/i].
+	You: Yes a trash can.
 	{{Global.salaryman.character_name}}: It's a trash can.
 	Inner Thoughts: We're getting nowhere with this.
 	=> start

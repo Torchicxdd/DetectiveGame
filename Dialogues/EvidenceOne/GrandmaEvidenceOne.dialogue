@@ -17,7 +17,7 @@ if Global.grandma.has_dentures == false
 	- Finish interrogating.
 else
 	- "Do you recognize this piece of evidence?"
-		Inner Thoughts: You reach over trying to pry the dentures out of the old women's mouth. These dentures belong to police, [i]no, they belong to you[/i].
+		Inner Thoughts: You reach over trying to pry the dentures out of the old women's mouth. These dentures belong to police, no, they belong to you.
 		{{Global.grandma.character_name}}: What are you doing! Get your dirty hands out of my mouth you freak!
 		Inner Thoughts: She's been military trained. If you were not able to get those dentures, no one can.
 		set Global.grandma.has_tried_taking_dentures = true

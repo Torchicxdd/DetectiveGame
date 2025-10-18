@@ -1,14 +1,19 @@
 class_name DialogueViewer extends Control
 
+@onready var dialogue_display = $ScrollContainer/MarginContainer/VDialogueDisplay
+
 var normal_dialogue_scene = preload("res://Scenes/UI/Dialogue/NormalDialogue.tscn")
 var inner_thoughts_scene = preload("res://Scenes/UI/Dialogue/InnerThoughtsDialogue.tscn")
 var options_dialogue_scene = preload("res://Scenes/UI/Dialogue/OptionsDialogue.tscn")
-@onready var dialogue_display = $Wrapper/ScrollContainer/MarginContainer/VDialogueDisplay
+
+# Create dialogue reader
+var dialogue_reader = DialogueReader.new()
 
 func _ready() -> void:
 	SignalBus.connect("add_dialogue", Callable(self, "_add_dialogue"))
 	SignalBus.connect("add_options", Callable(self, "_add_options"))
 	SignalBus.connect("choose_option", Callable(self, "_choose_option"))
+	SignalBus.emit_signal("start_dialogue_reader", Global.grandma.intro_resource)
 
 func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> void:
 	var instance: DialogueItem
@@ -30,13 +35,14 @@ func _add_options(options: Array[DialogueResponse]) -> void:
 	dialogue_display.add_child(instance)
 	dialogue_display.queue_redraw()
 
-func _choose_option(option: String) -> void:
+func _choose_option(option: DialogueResponse) -> void:
 	var instance = normal_dialogue_scene.instantiate() as DialogueItem
 	instance.set_character_name("You", false)
-	instance.set_dialogue(option)
+	instance.set_dialogue(option.text)
 	
 	# Remove options dialogue and push response
 	dialogue_display.get_child(dialogue_display.get_child_count() - 1).queue_free()
 	dialogue_display.add_child(instance)
 	# Have to redraw in order for separation to take effect for vbox
 	dialogue_display.queue_redraw()
+	SignalBus.emit_signal("process_chosen_option", option)

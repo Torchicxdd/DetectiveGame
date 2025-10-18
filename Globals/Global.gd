@@ -3,7 +3,6 @@ extends Node
 var main: Main
 
 var randomizer: Randomizer = Randomizer.new()
-var dialogue_reader: DialogueReader = DialogueReader.new()
 
 var grandma: Character = Grandma.new()
 var junkie: Character = Junkie.new()

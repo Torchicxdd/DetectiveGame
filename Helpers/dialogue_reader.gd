@@ -4,9 +4,9 @@ var dialogue_resource: DialogueResource = null
 var current_dialogue_line: DialogueLine = null
 var next_dialogue_id: String = ""
 
-func _ready() -> void:
+func _init() -> void:
 	SignalBus.connect("start_dialogue_reader", Callable(self, "_start_dialogue_reader"))
-	SignalBus.connect("choose_option", Callable(self, "_process_response"))
+	SignalBus.connect("process_chosen_option", Callable(self, "_process_response"))
 
 func _start_dialogue_reader(resource: DialogueResource) -> void:
 	dialogue_resource = resource
@@ -23,7 +23,7 @@ func read_dialogue() -> void:
 	process_dialogue_line()
 
 func process_dialogue_line() -> void:
-	if (current_dialogue_line.size() == 0):
+	if (typeof(current_dialogue_line) == TYPE_DICTIONARY and current_dialogue_line.size() == 0):
 		# Empty dialogue line. No more dialogue
 		SignalBus.emit_signal("end_dialogue")
 	elif (current_dialogue_line.text != ""):

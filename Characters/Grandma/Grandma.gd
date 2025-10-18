@@ -12,3 +12,4 @@ func _init() -> void:
 	gender = "Female"
 	hair_color = "Brown"
 	headshot = preload("res://Characters/Grandma/GrandmaHeadshot.png")
+	intro_resource = preload("res://Dialogues/Intro/GrandmaIntro.dialogue")
