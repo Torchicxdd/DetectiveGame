@@ -1,10 +1,12 @@
 class_name DialogueViewer extends Control
 
 @onready var dialogue_display = $ScrollContainer/MarginContainer/VDialogueDisplay
+@onready var scroll_container = $ScrollContainer
 
 var normal_dialogue_scene = preload("res://Scenes/UI/Dialogue/NormalDialogue.tscn")
 var inner_thoughts_scene = preload("res://Scenes/UI/Dialogue/InnerThoughtsDialogue.tscn")
 var options_dialogue_scene = preload("res://Scenes/UI/Dialogue/OptionsDialogue.tscn")
+var continue_button = preload("res://Scenes/UI/Dialogue/ContinueButton/ContinueButton.tscn")
 
 # Create dialogue reader
 var dialogue_reader = DialogueReader.new()
@@ -13,9 +15,12 @@ func _ready() -> void:
 	SignalBus.connect("add_dialogue", Callable(self, "_add_dialogue"))
 	SignalBus.connect("add_options", Callable(self, "_add_options"))
 	SignalBus.connect("choose_option", Callable(self, "_choose_option"))
+	SignalBus.connect("add_continue_button", Callable(self, "_add_continue_button"))
+	SignalBus.connect("continue_button_clicked", Callable(self, "_continue_button_clicked"))
 	SignalBus.emit_signal("start_dialogue_reader", Global.grandma.intro_resource)
 
 func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> void:
+	print("DialogueViewer: _add_dialogue")
 	var instance: DialogueItem
 	if (is_inner_thoughts):
 		instance = inner_thoughts_scene.instantiate()
@@ -28,21 +33,46 @@ func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> v
 	dialogue_display.add_child(instance)
 	# Have to redraw in order for separation to take effect for vbox
 	dialogue_display.queue_redraw()
+	await get_tree().process_frame
+	scroll_container.scroll_vertical = scroll_container.get_v_scroll_bar().max_value
+	SignalBus.emit_signal("process_next_dialogue")
 
 func _add_options(options: Array[DialogueResponse]) -> void:
+	print("DialogueViewer: _add_options")
 	var instance = options_dialogue_scene.instantiate() as OptionsDialogue
 	instance.set_options(options)
 	dialogue_display.add_child(instance)
 	dialogue_display.queue_redraw()
+	await get_tree().process_frame
+	scroll_container.scroll_vertical = scroll_container.get_v_scroll_bar().max_value
 
 func _choose_option(option: DialogueResponse) -> void:
+	print("DialogueViewer: _choose_option")
 	var instance = normal_dialogue_scene.instantiate() as DialogueItem
 	instance.set_character_name("You", false)
 	instance.set_dialogue(option.text)
 	
 	# Remove options dialogue and push response
-	dialogue_display.get_child(dialogue_display.get_child_count() - 1).queue_free()
+	var options = dialogue_display.get_child(dialogue_display.get_child_count() - 1)
+	dialogue_display.remove_child(options)
+	options.queue_free()
 	dialogue_display.add_child(instance)
 	# Have to redraw in order for separation to take effect for vbox
 	dialogue_display.queue_redraw()
 	SignalBus.emit_signal("process_chosen_option", option)
+
+func _add_continue_button() -> void:
+	print("DialogueViewer: _add_continue_button")
+	var button = continue_button.instantiate()
+	dialogue_display.add_child(button)
+	dialogue_display.queue_redraw()
+	await get_tree().process_frame
+	scroll_container.scroll_vertical = scroll_container.get_v_scroll_bar().max_value
+
+func _continue_button_clicked() -> void:
+	print("DialogueViewer: _continue_button_clicked")
+	var continue_button = dialogue_display.get_child(dialogue_display.get_child_count() - 1)
+	dialogue_display.remove_child(continue_button)
+	continue_button.queue_free()
+	dialogue_display.queue_redraw()
+	SignalBus.emit_signal("on_continue_button_deleted")
