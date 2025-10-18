@@ -7,3 +7,8 @@ func _init() -> void:
 	character_name = "Grandma"
 	silent_treatment_percentage = 0
 	lie_detector_percentage = 30
+	age = 78
+	height = 157
+	gender = "Female"
+	hair_color = "Brown"
+	headshot = preload("res://Characters/Grandma/GrandmaHeadshot.png")

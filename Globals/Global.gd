@@ -1,11 +1,12 @@
 extends Node
 
-var randomizer: Randomizer = Randomizer.new()
+var main: Main
 
-var detective: Detective = Detective.new()
+var randomizer: Randomizer = Randomizer.new()
+var dialogue_reader: DialogueReader = DialogueReader.new()
+
 var grandma: Character = Grandma.new()
 var junkie: Character = Junkie.new()
-var doncandy: Character = DonCandy.new()
+var little_child: Character = DonCandy.new()
 var salaryman: Character = SalaryMan.new()
 var teenager: Character = Teenager.new()
-var coworkers: Character = Coworkers.new()
