@@ -1,31 +1,52 @@
 ~ start
 
-- "Do you recognize this piece of evidence?"
-	{{Global.grandma.character_name}}: Dahhh eez mahhin, geev eet’ doo mee!
-	Inner Thoughts: The lady is extending her arms towards the evidence. That is very suspicious. She might be attempting to tamper with it.
-	=> start
-	
-- "Hand the plastic bag?"
-	{{Global.grandma.character_name}}: ... Oh my god, what took you so long to give me my denture!
-	Inner Thoughts: Her denture was in the crime location next to trash can according to the file.
-	=> start
-	
-- "Why was your denture in the crime scene?"
-	{{Global.grandma.character_name}}: One the kids stole it from me when I was giving them treats... We live in a cruel world my dear. 
-	Inner Thoughts: This is suspicious
-	=> start
-	
-- Use the lie detector.
-	do Global.randomizer.roll(0.3)
-	if Global.randomizer.roll_result == true
-		You: You have the taste of a liar {{Global.grandma.character_name}} !
-		{{Global.grandma.character_name}}: Eek! I am sorry, it fell when I went to check on the damage
-	else Global.randomizer.roll_result == false
-		Inner Thoughts: Not lying. Seems it was a false alarm.
-		{{Global.grandma.character_name}}: Eek! You pervert ! I am too old for you ! I'll sue you for sexual harassement! 
-	=> start
-	
-- Finish interrogating.
+if Global.grandma.has_dentures == false
+	- "Do you recognize this piece of evidence?"
+		{{Global.grandma.character_name}}: Dahhh eez mahhin, geev eet’ doo mee!
+		Inner Thoughts: The lady is extending her arms towards the evidence. That is very suspicious. She might be attempting to tamper with it.
+		
+		- Hand the plastic bag
+			Inner Thoughts: You reluctantly give her the bag with the evidence you received.
+		- Keep the plastic bag near you
+			{{Global.grandma.character_name}}: The Grandma reaches over the table and takes the bag from your hands rapidly. She opens the bag and places the dentures in her mouth.
+		{{Global.grandma.character_name}}: ... Oh my god, what took you so long to give me my denture!
+		Inner Thoughts: Her denture was in the crime location next to trash can according to the file.
+		set Global.grandma.has_dentures = true
+		=> start
+
+	- Finish interrogating.
+else
+	- "Do you recognize this piece of evidence?"
+		Inner Thoughts: You reach over trying to pry the dentures out of the old women's mouth. These dentures belong to police, no, they belong to you.
+		{{Global.grandma.character_name}}: What are you doing! Get your dirty hands out of my mouth you freak!
+		Inner Thoughts: She's been military trained. If you were not able to get those dentures, no one can.
+		set Global.grandma.has_tried_taking_dentures = true
+		=> start
+		
+	- "Why was your denture in the crime scene?"
+		{{Global.grandma.character_name}}: One of the kids stole it from me when I was giving them treats... We live in a cruel world my dear.
+		Inner Thoughts: It is indeed a cruel world. So cruel in fact that you cannot put all of these suspects in jail immdiately. If you brought them in, they should be already be charged with the crime.
+		if Global.grandma.has_tried_taking_dentures == true
+			Inner Thoughts: This kid must be the hulk. Not even you were able to take those dentures.
+		=> start
+		
+	- Use the lie detector\: {{Global.grandma.lie_detector_percentage}}% [if Global.detective.has_used_lie_detector == false]
+		Inner Thoughts: You have quite the arsenal of special moves but nothing quite like this one. Something about the sweat and skin pores just reveals the truths of a person.
+		Inner Thoughts: Go ahead. Have a lick.
+		do Global.randomizer.roll(Global.grandma.lie_detector_percentage)
+		if Global.randomizer.roll_result == true
+			Inner Thoughts: Slightly salty and a bit condensed.
+			You: This is the taste of a liar {{Global.grandma.character_name}}!
+			{{Global.grandma.character_name}}: Eek! I am sorry, it fell when I went to check on the damage
+		else Global.randomizer.roll_result == false
+			Inner Thoughts: Sugary and slightly evaporated. She's not lying, it was a false alarm.
+			You: All clear here!
+			{{Global.grandma.character_name}}: Eek! You pervert! I am too old for you! I'll sue you for sexual harassement!
+		
+		set Global.detective.has_used_lie_detector = true
+		=> start
+		
+	- Finish interrogating.
 
 You: You'll get what is coming to you!
 => END

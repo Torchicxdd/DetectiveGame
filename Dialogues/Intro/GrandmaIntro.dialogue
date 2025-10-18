@@ -2,20 +2,24 @@
 
 - "What were you doing that night?"
 	{{Global.grandma.character_name}}: Bahhh een mahh daayy, weh dihhn’ awweshh lahh abibbin’ shizhhenss!
-	Inner Thoughts: This lady was either out of her mind or clearly you just don’t speak her language. Your detective gut tells you it’s the latter. You’re going to have to learn it by Saturday.
+	Inner Thoughts: This lady is either out of her mind or clearly you just don’t speak her language. Your detective gut tells you it’s the latter.
+	Inner Thoughts: You’re going to have to learn it by Saturday.
 	=> start
 	
-- "Where were you at this time when the crime happened?"
+- "Where were you at the time of crime?"
 	{{Global.grandma.character_name}}: Ah wahh a’ hohm waffin’ mah shohh… dju knohh dish guh chee’on hish waff? Tha’ wahn ahh hehh duh nohhzzhh!
-	Inner Thoughts: Must be German
+	Inner Thoughts: This must be German.
 	=> start
 	
 - Show the picture of the trash can.
+	You: What can you tell me about this.... trash can?
 	{{Global.grandma.character_name}}: Thaah ish clehhly mah naybuhh’sh traaashh caaan… ah reporrr’ed duh crrrahhm, whaahh’m ahh hee’rr in duh firshh plahhssh?
+	Inner Thoughts: The task of decrypting this foreign language can only be done by one man, and one man only. You are clearly the man for the job.
 	=> start
 	
-- Give him the silent treatment.
+- Activate Silent Treatment\: {{Global.grandma.silent_treatment_percentage}}%
 	{{Global.grandma.character_name}}: Iff yooo’rr jus’ghh gon’uh bee shiddin’ der doin’ nuffin’… c’n ahh a’lee’ sht hahv a shiggarehhh? Dihh ish bahh fer mah nervvshh…
+	Inner Thoughts: You saw the 0% chance of succeeding and still clicked it. You have earned my respect.
 	=> start
 	
 - Finish interrogating.

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://2rgxdfc16p54"
+path="res://.godot/imported/LittleChildEvidenceOne.dialogue-7a753630e19d4ad508da62db692313d1.tres"
+
+[deps]
+
+source_file="res://Dialogues/EvidenceOne/LittleChildEvidenceOne.dialogue"
+dest_files=["res://.godot/imported/LittleChildEvidenceOne.dialogue-7a753630e19d4ad508da62db692313d1.tres"]
+
+[params]
+
+defaults=true

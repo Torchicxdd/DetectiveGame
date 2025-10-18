@@ -1,0 +1,44 @@
+~ start
+
+Inner Thoughts: You make your way to 32nd street. It’s bustling with people. They are all held together by the chains of society, walking door to door asking for candy every year at the same time.
+Inner Thoughts: You are not constrained by the same leash, you make your own holidays and the world is obliged. All these people, these worms, they all hold the right side of the escalator letting themselves be taken to a destination; you take the left and make your way up to where you want to be.
+Inner Thoughts: You see the house, 152 32nd Street, and its trash can knocked over, crying out tears of waste. This is unacceptable. This is clearly a cover up. The mastermind behind this crime is at large, and it’s time for you to bless the world with your genius.
+Inner Thoughts: There are a couple people who immediately catch your eye:
+
+~ intros
+if Global.little_child.has_seen_intro == false or Global.salaryman.has_seen_intro == false or Global.junkie.has_seen_intro == false or Global.grandma.has_seen_intro == false or Global.teenager.has_seen_intro == false
+	- {{Global.little_child.character_name}} [if Global.little_child.has_seen_intro == false ]
+		Inner Thoughts: The little roach is clearly in over his head. He’s solo carrying his huge bag of candy like it was his ranked game’s teammates.
+		Inner Thoughts: No kid of his size or stature could even think of pulling off such a haul. He looked like he was carrying Santa Claus’ gift bag, except clearly, he was not giving out any toys but rather taking them away.
+		Inner Thoughts: Whatever he was up to, this kid could clearly be the mastermind behind this genius crime.
+		set Global.little_child.has_seen_intro = true
+		=> intros
+	- {{Global.salaryman.character_name}} [if Global.salaryman.has_seen_intro == false ]
+		Inner Thoughts: You notice the sad sight of a man living day to day, paycheck to paycheck. He clearly did not understand the game of life.
+		Inner Thoughts: He looked like he had just woken up from a storm and put on the same clothes as the day before. If anything, your guess was probably right, a detective’s gut is his greatest tool. This man clearly did not want to be where he is right now.
+		Inner Thoughts: With a beer one in hand and his kid in another, he goes door to door letting his child ask for candy that he was too cheap to buy himself. He is raising the child like himself: to be a societal idiot.
+		Inner Thoughts: He wants revenge on the world, and today’s crime was his first step towards that goal.
+		set Global.salaryman.has_seen_intro = true
+		=> intros
+	- {{Global.junkie.character_name}} [if Global.junkie.has_seen_intro == false ]
+		Inner Thoughts: Ah yes, the junkie. The laziest of all. Always and only concerned about when they can get their next high.
+		Inner Thoughts: But this one was different. He wasn’t high off the hard shit. He didn’t have the syringe or the percs or the blues, he had candy. You think he is testing out a new kind of high, a sugar high.
+		Inner Thoughts: Clearly something is up here: you cannot let this man get away with a crime he is clearly covering up.
+		set Global.junkie.has_seen_intro = true
+		=> intros
+	- {{Global.grandma.character_name}} [if Global.grandma.has_seen_intro == false ]
+		Inner Thoughts: You can clearly see her giving out the worst candy on the block. Knock by knock she opens the doors and gives out raisins and hard taffy to the little kids.
+		Inner Thoughts: What a waste of time. The only thing old people are good for is cooking and clearly she has wasted her natural talent and spoiled it for everyone. If you were her age, you would be baking the greatest cookies and giving out the most excellent of chocolates. You could even turn it into a business.
+		Inner Thoughts: Clearly all of that has slipped her mind and has decided that kicking down her neighbour’s trash can would be a better use of her time, spreading hate and evil to the world.
+		set Global.grandma.has_seen_intro = true
+		=> intros
+	- {{Global.teenager.character_name}} [if Global.teenager.has_seen_intro == false ]
+		Inner Thoughts: The bane of all humans. A teenager. Somehow watching them do teenager things is more annoying than hearing a baby cry inside an enclosed space.
+		Inner Thoughts: You were never like them at their age. You were honing your detective skills and becoming the greatest young mind of your time. And this teen was clearly honing his skills to be the dumbest mind of his time.
+		Inner Thoughts: You cannot imagine how stupid he looked knocking on doors asking for candy pretending to be a kid two times younger than he was. No one could possibly be this dumb and that, in itself, is suspicious enough for your famed detective alarm to start ringing.
+		set Global.teenager.has_seen_intro = true
+		=> intros
+
+Inner Thoughts: You've seen enough. They are all clearly guilty. You bring all the rats in.
+
+=> END

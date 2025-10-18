@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ymdfoi5g8vky"
+path="res://.godot/imported/SalaryManEvidenceOne.dialogue-491188f9ccab30c2ca8dd5a31be92063.tres"
+
+[deps]
+
+source_file="res://Dialogues/EvidenceOne/SalaryManEvidenceOne.dialogue"
+dest_files=["res://.godot/imported/SalaryManEvidenceOne.dialogue-491188f9ccab30c2ca8dd5a31be92063.tres"]
+
+[params]
+
+defaults=true
