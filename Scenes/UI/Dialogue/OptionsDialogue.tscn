@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://drb2mi0oqrqip"]
+
+[ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="1_anrxa"]
+[ext_resource type="Script" uid="uid://8jivdi5ap86u" path="res://Scenes/UI/Dialogue/options_dialogue.gd" id="1_fmesg"]
+
+[node name="OptionsDialogue" type="VBoxContainer"]
+offset_right = 365.0
+offset_bottom = 23.0
+theme_override_constants/separation = 18
+script = ExtResource("1_fmesg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_anrxa")
+theme_override_font_sizes/font_size = 20
+text = "You:"
+
+[node name="Options" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8

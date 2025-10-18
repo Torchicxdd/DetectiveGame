@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk473nef6ue7j"
-path="res://.godot/imported/LittleChildHeadshot.png-932439f8700ba060bc332960336b8e83.ctex"
+uid="uid://oputbfsarvae"
+path="res://.godot/imported/option_icon.png-d29863f70a2bd322ade1790b935ee639.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/LittleChild/LittleChildHeadshot.png"
-dest_files=["res://.godot/imported/LittleChildHeadshot.png-932439f8700ba060bc332960336b8e83.ctex"]
+source_file="res://Scenes/UI/Dialogue/Options/option_icon.png"
+dest_files=["res://.godot/imported/option_icon.png-d29863f70a2bd322ade1790b935ee639.ctex"]
 
 [params]
 

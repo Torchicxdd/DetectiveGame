@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cgyf3l07myu0w"
+path="res://.godot/imported/JunkieEvidenceOnce.dialogue-dbaa9f431a545ba4f1ad7476c8f3e68e.tres"
+
+[deps]
+
+source_file="res://Dialogues/EvidenceOne/JunkieEvidenceOnce.dialogue"
+dest_files=["res://.godot/imported/JunkieEvidenceOnce.dialogue-dbaa9f431a545ba4f1ad7476c8f3e68e.tres"]
+
+[params]
+
+defaults=true

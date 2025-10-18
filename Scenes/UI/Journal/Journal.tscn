@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5uj14p4e0jgm"]
+[gd_scene load_steps=10 format=3 uid="uid://5uj14p4e0jgm"]
 
 [ext_resource type="Script" uid="uid://fi1v4k17o07f" path="res://Scenes/UI/Journal/journal.gd" id="1_ri2co"]
 [ext_resource type="Texture2D" uid="uid://cee2ffn1yuw0v" path="res://Scenes/UI/Journal/journal_background.png" id="2_oamcm"]
@@ -6,35 +6,45 @@
 [ext_resource type="Texture2D" uid="uid://dfwena8ewvxwp" path="res://Scenes/UI/Journal/active_tab.png" id="4_kqxqc"]
 [ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="5_obyok"]
 [ext_resource type="Texture2D" uid="uid://xmxq3dpq4ydx" path="res://Scenes/UI/Journal/inactive_tab.png" id="6_02n6t"]
-[ext_resource type="Texture2D" uid="uid://dnl7ra7cjmefp" path="res://Scenes/UI/Journal/top_secret.png" id="7_djeef"]
 [ext_resource type="Texture2D" uid="uid://djvl843px0r6y" path="res://Scenes/UI/Journal/tape.png" id="8_2tvdk"]
 [ext_resource type="Theme" uid="uid://bq6s1ll3u64e1" path="res://Themes/MediumTheme.tres" id="8_54433"]
 [ext_resource type="Texture2D" uid="uid://bqxeb87bdli6k" path="res://Scenes/UI/Journal/evidence.png" id="11_gm7al"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.011000001
+anchor_top = 0.113000005
+anchor_right = 0.294
+anchor_bottom = 0.74200004
+offset_left = -0.5
+offset_top = -0.32000732
+offset_right = 0.14001465
+offset_bottom = 0.4500122
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ri2co")
 
 [node name="Paper" type="TextureRect" parent="."]
 layout_mode = 1
-offset_left = 20.62
-offset_top = 121.72
-offset_right = 553.62
-offset_bottom = 802.72
+anchors_preset = -1
+anchor_right = 0.98
+anchor_bottom = 1.001
+offset_right = -0.11999512
+offset_bottom = 0.22979736
 texture = ExtResource("2_oamcm")
 stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_left = 528.5
-offset_top = 191.57
-offset_right = 564.5
-offset_bottom = 762.57
+anchors_preset = -1
+anchor_left = 0.93600005
+anchor_top = 0.10300001
+anchor_right = 1.0020001
+anchor_bottom = 0.94200003
+offset_left = -0.184021
+offset_top = -0.19928741
+offset_right = -0.08807373
+offset_bottom = 0.20507813
 size_flags_horizontal = 8
 script = ExtResource("3_luoye")
 
@@ -153,36 +163,43 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="TopSecret" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 362.56
-offset_top = 197.32
-offset_right = 521.56
-offset_bottom = 356.32
-texture = ExtResource("7_djeef")
-
 [node name="CharacterImage" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 90.93
-offset_top = 214.69
-offset_right = 206.03
-offset_bottom = 344.47
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12900001
+anchor_top = 0.13700001
+anchor_right = 0.34100002
+anchor_bottom = 0.328
+offset_left = 0.13399506
+offset_top = -0.2023468
+offset_right = -0.0940094
+offset_bottom = -0.31954956
 
 [node name="Tape1" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 82.12
-offset_top = 206.57
-offset_right = 216.12
-offset_bottom = 354.57
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113000005
+anchor_top = 0.125
+anchor_right = 0.35900003
+anchor_bottom = 0.342
+offset_left = 0.027996063
+offset_top = -0.16126251
+offset_right = 0.20397949
+offset_bottom = 0.2591858
 texture = ExtResource("8_2tvdk")
 
 [node name="CharacterInfo" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 234.0
-offset_top = 222.0
-offset_right = 274.0
-offset_bottom = 262.0
-theme_override_constants/separation = 7
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.393
+anchor_top = 0.147
+anchor_right = 0.744
+anchor_bottom = 0.319
+offset_left = -0.20201111
+offset_top = -0.33324432
+offset_right = -0.1459961
+offset_bottom = -0.30873108
+theme_override_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CharacterInfo"]
 layout_mode = 2
@@ -265,19 +282,29 @@ theme_override_colors/font_color = Color(0.7529412, 0.1764706, 0.1764706, 1)
 uppercase = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 90.93
-offset_top = 367.77
-offset_right = 498.93
-offset_bottom = 407.77
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12900001
+anchor_top = 0.36200002
+anchor_right = 0.87900007
+anchor_bottom = 0.416
+offset_left = 0.13399506
+offset_top = -0.1426239
+offset_right = 0.13397217
+offset_bottom = 0.13250732
 texture = ExtResource("11_gm7al")
 
 [node name="EvidenceGrid" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 427.0
-offset_right = 498.0
-offset_bottom = 769.4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12900001
+anchor_top = 0.448
+anchor_right = 0.87600005
+anchor_bottom = 0.952
+offset_left = 0.13399506
+offset_top = 0.16964722
+offset_right = -0.2340393
+offset_bottom = -0.19580078
 theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 17
 columns = 3
