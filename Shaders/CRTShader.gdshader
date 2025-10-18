@@ -25,30 +25,25 @@ vec2 curve_uv(vec2 uv) {
 }
 
 void fragment() {
-    // Use UV instead of SCREEN_UV for SubViewportContainer
     vec2 uv = UV;
-    
-    // Apply curvature
     vec2 curved_uv = curve_uv(uv);
     
     // Check if we're outside the curved bounds (black borders)
     if (curved_uv.x < 0.0 || curved_uv.x > 1.0 || curved_uv.y < 0.0 || curved_uv.y > 1.0) {
         COLOR = vec4(0.0, 0.0, 0.0, 1.0);
     } else {
-        // Sample the texture of the control itself
         vec3 col = texture(TEXTURE, curved_uv).rgb;
         
-        // Scanlines with movement
+        // Scanlines
         float scanline_offset = TIME * scanline_speed;
         float scanline = sin((curved_uv.y + scanline_offset) * scanline_count * 3.14159) * 0.5 + 0.5;
         scanline = mix(1.0, scanline, scanline_strength);
         col *= scanline;
         
-        // Add some subtle noise for authenticity
         float noise = random(curved_uv + vec2(TIME * 0.1)) * noise_amount;
         col += vec3(noise);
         
-        // Vignette effect
+        // Vignette
         vec2 vignetteUV = curved_uv * (1.0 - curved_uv);
         float vignette = vignetteUV.x * vignetteUV.y * 15.0;
         vignette = pow(vignette, vignette_strength);

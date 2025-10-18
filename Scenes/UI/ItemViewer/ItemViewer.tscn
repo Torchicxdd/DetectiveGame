@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://d3nm6fijc7b38"]
+[gd_scene load_steps=34 format=3 uid="uid://d3nm6fijc7b38"]
 
 [ext_resource type="Texture2D" uid="uid://c0hco324vclok" path="res://Scenes/UI/ItemViewer/background.png" id="1_cvd24"]
 [ext_resource type="Script" uid="uid://bkunsylclq4dq" path="res://Scenes/UI/ItemViewer/item_viewer.gd" id="1_fvytp"]
 [ext_resource type="Texture2D" uid="uid://cayq08iq6bdo7" path="res://Scenes/UI/ItemViewer/tv_background.png" id="2_boqq0"]
 [ext_resource type="Material" uid="uid://qxsvm28ij5sf" path="res://Materials/CRTMaterial.tres" id="4_k8l1a"]
+[ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="4_o8gm1"]
 [ext_resource type="Texture2D" uid="uid://egdrrcqqcf70" path="res://Scenes/UI/ItemViewer/brand.png" id="5_k8l1a"]
 [ext_resource type="Texture2D" uid="uid://smied263rf3h" path="res://Scenes/UI/ItemViewer/ButtonStates/off_normal.png" id="6_ta81m"]
 [ext_resource type="Script" uid="uid://ceo7p8x1hqsk3" path="res://Scenes/UI/ItemViewer/buttons.gd" id="6_urii2"]
@@ -113,6 +114,51 @@ theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 17
 columns = 4
 
+[node name="ItemsTitle" type="Control" parent="SubViewportContainer/ContentViewport"]
+layout_mode = 3
+anchor_left = 0.18900001
+anchor_top = 0.814
+anchor_right = 0.845
+anchor_bottom = 0.87000006
+offset_left = -0.4830017
+offset_top = 0.030029297
+offset_right = -0.115112305
+offset_bottom = -0.21002197
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/ContentViewport/ItemsTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.08235294, 0.08235294, 0.08235294, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/ContentViewport/ItemsTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="SubViewportContainer/ContentViewport/ItemsTitle/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("4_o8gm1")
+theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_font_sizes/font_size = 24
+text = "ALL ITEMS"
+vertical_alignment = 1
+
+[node name="PageCount" type="Label" parent="SubViewportContainer/ContentViewport/ItemsTitle/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_o8gm1")
+theme_override_font_sizes/font_size = 28
+text = "1 / 8"
+
 [node name="Border" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -201,6 +247,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_1viql")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yg4of")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_yo8jg")
 theme_override_styles/focus = SubResource("StyleBoxFlat_1viql")
+disabled = true
 
 [node name="NextPage" type="Button" parent="ControlPanel/Buttons/Pagers"]
 layout_mode = 1
