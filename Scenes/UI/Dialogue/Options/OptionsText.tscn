@@ -42,3 +42,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_m304o")
 theme_override_styles/focus = SubResource("StyleBoxFlat_w0kfd")
 alignment = 0
 script = ExtResource("2_7actb")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
