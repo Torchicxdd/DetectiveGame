@@ -1,6 +1,6 @@
 extends Control
 
-var journal_preload = preload("res://Scenes/UI/journal/journal.tscn")
+var journal_preload = preload("res://Scenes/UI/Journal/Journal.tscn")
 var dialogue_viewer_preload = preload("res://Scenes/UI/DialogueViewer/DialogueViewer.tscn")
 # var journal_button_preload =
 # var chat_preload = 
