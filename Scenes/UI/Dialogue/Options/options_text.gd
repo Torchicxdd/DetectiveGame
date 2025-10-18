@@ -1,10 +1,10 @@
 class_name OptionsText extends Button
 
-var option_text: String
+var button_option: DialogueResponse
 
-func set_option(option: String) -> void:
-	option_text = option
-	text = "◆ " + option_text
+func set_option(option: DialogueResponse) -> void:
+	button_option = option
+	text = "◆ " + button_option.text
 
 func _on_pressed() -> void:
-	SignalBus.emit_signal("choose_option", option_text)
+	SignalBus.emit_signal("choose_option", button_option)

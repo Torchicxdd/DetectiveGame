@@ -24,7 +24,7 @@ func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> v
 	# Have to redraw in order for separation to take effect for vbox
 	dialogue_display.queue_redraw()
 
-func _add_options(options: Array[String]) -> void:
+func _add_options(options: Array[DialogueResponse]) -> void:
 	var instance = options_dialogue_scene.instantiate() as OptionsDialogue
 	instance.set_options(options)
 	dialogue_display.add_child(instance)
