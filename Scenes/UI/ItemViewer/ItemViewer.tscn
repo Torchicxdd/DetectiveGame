@@ -1,9 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3nm6fijc7b38"]
+[gd_scene load_steps=33 format=3 uid="uid://d3nm6fijc7b38"]
 
 [ext_resource type="Texture2D" uid="uid://c0hco324vclok" path="res://Scenes/UI/ItemViewer/background.png" id="1_cvd24"]
 [ext_resource type="Script" uid="uid://bkunsylclq4dq" path="res://Scenes/UI/ItemViewer/item_viewer.gd" id="1_fvytp"]
 [ext_resource type="Texture2D" uid="uid://cayq08iq6bdo7" path="res://Scenes/UI/ItemViewer/tv_background.png" id="2_boqq0"]
 [ext_resource type="Material" uid="uid://qxsvm28ij5sf" path="res://Materials/CRTMaterial.tres" id="4_k8l1a"]
+[ext_resource type="Texture2D" uid="uid://egdrrcqqcf70" path="res://Scenes/UI/ItemViewer/brand.png" id="5_k8l1a"]
+[ext_resource type="Texture2D" uid="uid://smied263rf3h" path="res://Scenes/UI/ItemViewer/ButtonStates/off_normal.png" id="6_ta81m"]
+[ext_resource type="Script" uid="uid://ceo7p8x1hqsk3" path="res://Scenes/UI/ItemViewer/buttons.gd" id="6_urii2"]
+[ext_resource type="Texture2D" uid="uid://ck0wfo2qfvpqo" path="res://Scenes/UI/ItemViewer/ButtonStates/off_pressed.png" id="7_sekh2"]
+[ext_resource type="Texture2D" uid="uid://dcnqbvuavoi40" path="res://Scenes/UI/ItemViewer/ButtonStates/items_list_enabled.png" id="8_qfii2"]
+[ext_resource type="Texture2D" uid="uid://nsuachaby3qx" path="res://Scenes/UI/ItemViewer/ButtonStates/items_list_disabled.png" id="9_q787x"]
+[ext_resource type="Texture2D" uid="uid://biu8svag7ueok" path="res://Scenes/UI/ItemViewer/ButtonStates/items_list_pressed.png" id="9_r3l1p"]
+[ext_resource type="Texture2D" uid="uid://dc11fkroet84j" path="res://Scenes/UI/ItemViewer/ButtonStates/previous_enabled.png" id="11_ljvkb"]
+[ext_resource type="Texture2D" uid="uid://dip08h14bfkwe" path="res://Scenes/UI/ItemViewer/ButtonStates/previous_pressed.png" id="12_yg4of"]
+[ext_resource type="Texture2D" uid="uid://ddbcvulluexkb" path="res://Scenes/UI/ItemViewer/ButtonStates/previous_disabled.png" id="13_1viql"]
+[ext_resource type="Texture2D" uid="uid://qanxhu60f0r5" path="res://Scenes/UI/ItemViewer/ButtonStates/next_enabled.png" id="14_yo8jg"]
+[ext_resource type="Texture2D" uid="uid://c3klef1d123am" path="res://Scenes/UI/ItemViewer/ButtonStates/next_pressed.png" id="15_otyt5"]
+[ext_resource type="Texture2D" uid="uid://ko022v70hj3d" path="res://Scenes/UI/ItemViewer/ButtonStates/next_disabled.png" id="15_qvb87"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8l1a"]
+texture = ExtResource("6_ta81m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ta81m"]
+texture = ExtResource("7_sekh2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sekh2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q787x"]
+texture = ExtResource("8_qfii2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljvkb"]
+texture = ExtResource("9_r3l1p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3l1p"]
+texture = ExtResource("9_q787x")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3l1p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yg4of"]
+texture = ExtResource("11_ljvkb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1viql"]
+texture = ExtResource("12_yg4of")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yo8jg"]
+texture = ExtResource("13_1viql")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1viql"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvb87"]
+texture = ExtResource("14_yo8jg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_urii2"]
+texture = ExtResource("15_otyt5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otyt5"]
+texture = ExtResource("15_qvb87")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo8jg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="ItemViewer" type="Control"]
 layout_mode = 3
@@ -14,41 +72,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fvytp")
 
-[node name="CRTDisplay" type="TextureRect" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = ExtResource("4_k8l1a")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.067
 anchor_top = 0.082
-anchor_right = 0.768
+anchor_right = 0.767
 anchor_bottom = 0.929
 offset_left = -0.80999756
 offset_top = 0.13999176
-offset_right = 0.26989746
-offset_bottom = 0.38000488
+offset_right = 0.39990234
+offset_bottom = -0.33996582
 
-[node name="ContentViewport" type="SubViewport" parent="."]
+[node name="ContentViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(1347, 915)
 render_target_update_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="ContentViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/ContentViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1307.0
+offset_bottom = -875.0
 texture = ExtResource("2_boqq0")
 
-[node name="EvidenceGrid" type="GridContainer" parent="ContentViewport"]
+[node name="EvidenceGrid" type="GridContainer" parent="SubViewportContainer/ContentViewport"]
 anchors_preset = -1
-anchor_left = 0.172
-anchor_top = 0.15400001
-anchor_right = 0.82800007
-anchor_bottom = 0.846
-offset_left = 271.266
-offset_top = 151.167
-offset_right = 271.6339
-offset_bottom = 150.357
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.18900001
+anchor_top = 0.089
+anchor_right = 0.845
+anchor_bottom = 0.78000003
+offset_left = -0.4830017
+offset_top = 0.034996033
+offset_right = -0.115112305
+offset_bottom = 0.13995361
 theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 17
 columns = 4
@@ -56,14 +116,109 @@ columns = 4
 [node name="Border" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.037
-anchor_top = 0.037
-anchor_right = 0.96300006
-anchor_bottom = 0.96300006
-offset_left = 11.610001
-offset_top = 6.5300026
-offset_right = 10.689941
-offset_bottom = 6.449951
+anchor_left = 0.043
+anchor_top = 0.043
+anchor_right = 0.96900004
+anchor_bottom = 0.96900004
+offset_left = 0.08999634
+offset_top = 0.049999237
+offset_right = -0.8300781
+offset_bottom = -0.030029297
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_cvd24")
+
+[node name="ControlPanel" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.791
+anchor_top = 0.133
+anchor_right = 0.93700004
+anchor_bottom = 0.81500006
+offset_left = 0.14001465
+offset_top = 0.5299988
+offset_right = -0.3701172
+offset_bottom = -0.52008057
+
+[node name="Brand" type="TextureRect" parent="ControlPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.10300001
+offset_right = -239.80994
+offset_bottom = -35.757538
+texture = ExtResource("5_k8l1a")
+
+[node name="Buttons" type="Control" parent="ControlPanel"]
+layout_mode = 1
+anchor_top = 0.739
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.031921387
+offset_right = 6.1035156e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_urii2")
+
+[node name="Off" type="Button" parent="ControlPanel/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.29200003
+offset_bottom = -0.06400299
+theme_override_styles/normal = SubResource("StyleBoxTexture_k8l1a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ta81m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8l1a")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sekh2")
+
+[node name="ItemsList" type="Button" parent="ControlPanel/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.354
+anchor_right = 1.0
+anchor_bottom = 0.646
+offset_top = 0.03199768
+offset_bottom = -0.03200531
+theme_override_styles/normal = SubResource("StyleBoxTexture_q787x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ljvkb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q787x")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r3l1p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_r3l1p")
+
+[node name="Pagers" type="Control" parent="ControlPanel/Buttons"]
+anchors_preset = 0
+offset_top = 136.0
+offset_right = 279.81
+offset_bottom = 192.0
+
+[node name="PreviousPage" type="Button" parent="ControlPanel/Buttons/Pagers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.47900003
+anchor_bottom = 1.0
+offset_right = -0.1289978
+theme_override_styles/normal = SubResource("StyleBoxTexture_yg4of")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1viql")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yg4of")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_yo8jg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1viql")
+
+[node name="NextPage" type="Button" parent="ControlPanel/Buttons/Pagers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.521
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.11897278
+offset_right = -0.010009766
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_qvb87")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_urii2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qvb87")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_otyt5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yo8jg")
+
+[connection signal="pressed" from="ControlPanel/Buttons/Off" to="ControlPanel/Buttons" method="_on_off_pressed"]
+[connection signal="pressed" from="ControlPanel/Buttons/ItemsList" to="ControlPanel/Buttons" method="_on_items_list_pressed"]
+[connection signal="pressed" from="ControlPanel/Buttons/Pagers/PreviousPage" to="ControlPanel/Buttons" method="_on_previous_page_pressed"]
+[connection signal="pressed" from="ControlPanel/Buttons/Pagers/NextPage" to="ControlPanel/Buttons" method="_on_next_page_pressed"]
