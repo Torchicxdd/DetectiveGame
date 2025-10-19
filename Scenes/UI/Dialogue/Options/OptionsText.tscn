@@ -29,8 +29,11 @@ bg_color = Color(0.21960784, 0.21960784, 0.21960784, 1)
 bg_color = Color(1, 1, 1, 0)
 
 [node name="OptionsText" type="Button"]
-offset_right = 205.0
-offset_bottom = 20.0
+anchors_preset = -1
+anchor_right = 0.10700001
+anchor_bottom = 0.019000001
+offset_right = -0.4400177
+offset_bottom = -0.52000046
 theme = ExtResource("1_m304o")
 theme_override_colors/font_color = Color(0.5568628, 0.5568628, 0.5568628, 1)
 theme_override_colors/font_focus_color = Color(0.5568628, 0.5568628, 0.5568628, 1)

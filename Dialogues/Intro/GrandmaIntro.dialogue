@@ -17,7 +17,8 @@
 	Inner Thoughts: The task of decrypting this foreign language can only be done by one man, and one man only. You are clearly the man for the job.
 	=> start
 	
-- Activate Silent Treatment\: {{Global.grandma.silent_treatment_percentage}}%
+- Activate Silent Treatment. [#percentage=0]
+	do Global.randomizer.roll(0)
 	{{Global.grandma.character_name}}: Iff yooo’rr jus’ghh gon’uh bee shiddin’ der doin’ nuffin’… c’n ahh a’lee’ sht hahv a shiggarehhh? Dihh ish bahh fer mah nervvshh…
 	Inner Thoughts: You saw the 0% chance of succeeding and still clicked it. You have earned my respect.
 	=> start

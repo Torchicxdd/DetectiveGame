@@ -17,9 +17,9 @@
 	Inner Thoughts: This is an emotional topic for him. Maybe you shouldn't pry at him too much.
 	=> start
 	
-- Activate Silent Treatment\: {{Global.junkie.silent_treatment_percentage}}%
+- Activate Silent Treatment. [#percentage=50]
 	Inner Thoughts: You activate your auraful powers and give the Junkie the silent treatment. You are clearly emitting authority. You are the man.
-	do Global.randomizer.roll(Global.junkie.silent_treatment_percentage)
+	do Global.randomizer.roll(50)
 	if Global.randomizer.roll_result == true
 		{{Global.junkie.character_name}}: Oh come on man, I was just minding my own business as usual at my spot. I don’t bother anybody, why are you even bringing me here?
 		{{Global.junkie.character_name}}: Is it the trash can? I didn’t see who kicked it down. There were a lot of people walking by the street. Wait, do you think it’s me??? I swear I am innocent.
