@@ -17,7 +17,7 @@ func _ready() -> void:
 	SignalBus.connect("choose_option", Callable(self, "_choose_option"))
 	SignalBus.connect("add_continue_button", Callable(self, "_add_continue_button"))
 	SignalBus.connect("continue_button_clicked", Callable(self, "_continue_button_clicked"))
-	SignalBus.emit_signal("start_dialogue_reader", Global.grandma.intro_resource)
+	SignalBus.emit_signal("start_dialogue_reader", Global.grandma.intro_resource, Global.grandma, Global.Stage.INTRO)
 
 func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> void:
 	var instance: DialogueItem

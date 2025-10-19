@@ -4,8 +4,10 @@ class_name Character extends Node
 var character_name: String
 
 # Rolls
-var silent_treatment_percentage: int
-var lie_detector_percentage: int
+var stage_max_clicks = {
+	Global.Stage.INTRO: 0,
+	Global.Stage.ACT1: 0
+}
 
 # Game States
 var has_seen_intro: bool = false
@@ -18,3 +20,4 @@ var headshot: Texture2D
 
 # Resources
 var intro_resource: DialogueResource
+var evidence_one_resource: DialogueResource

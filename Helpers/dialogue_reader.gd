@@ -1,5 +1,7 @@
 class_name DialogueReader extends Node
 
+var current_character_object: Character
+var current_stage: Global.Stage
 var dialogue_resource: DialogueResource = null
 
 var current_dialogue_line: DialogueLine = null
@@ -15,7 +17,9 @@ func _init() -> void:
 	SignalBus.connect("on_continue_button_deleted", Callable(self, "_add_dialogue"))
 	SignalBus.connect("process_next_dialogue", Callable(self, "_process_next_dialogue"))
 
-func _start_dialogue_reader(resource: DialogueResource) -> void:
+func _start_dialogue_reader(resource: DialogueResource, character: Character, stage: Global.Stage) -> void:
+	current_stage = stage
+	current_character_object = character
 	dialogue_resource = resource
 	_process_next_dialogue()
 
@@ -48,6 +52,11 @@ func process_dialogue_line() -> void:
 		SignalBus.emit_signal("add_options", responses)
 
 func _process_chosen_option(response: DialogueResponse) -> void:
+	# Add meter percentage and cap it per character per stage
+	if (current_character_object.stage_max_clicks[current_stage] > 0):
+		Global.meter_percentage += 1
+		current_character_object.stage_max_clicks[current_stage] -= 1
+	
 	next_dialogue_id = response.next_id
 	_process_next_dialogue()
 

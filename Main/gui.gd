@@ -4,6 +4,7 @@ var journal_preload = preload("res://Scenes/UI/Journal/Journal.tscn")
 var dialogue_viewer_preload = preload("res://Scenes/UI/DialogueViewer/DialogueViewer.tscn")
 var item_viewer_preload = preload("res://Scenes/UI/ItemViewer/ItemViewer.tscn")
 var scene_buttons_preload = preload("res://Scenes/UI/InterrogationRoomSceneButtons/InterrogationRoomSceneButtons.tscn")
+var meter_preload = preload("res://Scenes/UI/Meter/Meter.tscn")
 
 func _ready() -> void:
 	SignalBus.connect("open_dialogue_viewer", Callable(self, "_open_dialogue_viewer"))
@@ -13,6 +14,7 @@ func _ready() -> void:
 	SignalBus.connect("open_item_description", Callable(self, "_open_item_description"))
 	SignalBus.connect("close_item_viewer", Callable(self, "_close_item_viewer"))
 	SignalBus.connect("instantiate_interrogation_room_scene_buttons", Callable(self, "_instantiate_interrogation_room_scene_buttons"))
+	SignalBus.instantiate_meter.connect(_instantiate_meter)
 
 func _open_journal() -> void:
 	var instanced_journal = journal_preload.instantiate()
@@ -49,3 +51,7 @@ func _close_item_viewer() -> void:
 func _instantiate_interrogation_room_scene_buttons() -> void:
 	var scene_buttons_instance = scene_buttons_preload.instantiate() as InterrogationRoomSceneButtons
 	Global.main.addGUIScene(scene_buttons_instance)
+
+func _instantiate_meter() -> void:
+	var meter_instance = meter_preload.instantiate() as Meter
+	Global.main.addGUIScene(meter_instance)
