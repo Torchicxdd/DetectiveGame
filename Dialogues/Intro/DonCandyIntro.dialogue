@@ -22,9 +22,9 @@ if Global.doncandy.has_investigated_first_time == false
 	Inner Thoughts: He is not wrong.
 	=> questions
 
-- Activate Silent Treatment\: {{Global.doncandy.silent_treatment_percentage}}%
+- Activate Silent Treatment. [#percentage=50]
 	Inner Thoughts: This kid does not understand the situation he is in. You must use your ultimate move to put him in his place.
-	do Global.randomizer.roll(Global.doncandy.silent_treatment_percentage)
+	do Global.randomizer.roll(50)
 	if Global.randomizer.roll_result == true
 		{{Global.doncandy.character_name}}: Mister, I didn’t do anything unCANDY, I was just walking around getting some CANDY. Can I go? There’s still CANDY out in the street.
 		Inner Thoughts: There you go. You taught that kid who was boss. What a pathetic punk.

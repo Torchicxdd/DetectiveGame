@@ -30,9 +30,9 @@
 	Inner Thoughts: We're getting nowhere with this.
 	=> start
 
-- Activate Silent Treatment\: {{Global.salaryman.silent_treatment_percentage}}%
+- Activate Silent Treatment. [#percentage=50]
 	Inner Thoughts: He thought his boss was rough on him. You cannot wait to show him what real disappointment looks like.
-	do Global.randomizer.roll(Global.salaryman.silent_treatment_percentage)
+	do Global.randomizer.roll(50)
 	if Global.randomizer.roll_result == true
 		{{Global.salaryman.character_name}}: H-hey why aren’t you talking… You’re freaking me out. I was just walking my kid for halloween getting candy. I didn’t do anything wrong. Maybe I was a little drunk but who wouldn’t be?
 		Inner Thoughts: He starts rambling about how it hasn't been the best between him and his wife lately and that he is worried that his boss might fire him. He seems to also be behind on his mortgage.

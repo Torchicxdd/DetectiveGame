@@ -30,10 +30,10 @@ else
 			Inner Thoughts: This kid must be the hulk. Not even you were able to take those dentures.
 		=> start
 		
-	- Use the lie detector\: {{Global.grandma.lie_detector_percentage}}% [if Global.detective.has_used_lie_detector == false]
+	- Use the lie detector. [#percentage=30] [if Global.detective.has_used_lie_detector == false]
 		Inner Thoughts: You have quite the arsenal of special moves but nothing quite like this one. Something about the sweat and skin pores just reveals the truths of a person.
 		Inner Thoughts: Go ahead. Have a lick.
-		do Global.randomizer.roll(Global.grandma.lie_detector_percentage)
+		do Global.randomizer.roll(30)
 		if Global.randomizer.roll_result == true
 			Inner Thoughts: Slightly salty and a bit condensed.
 			You: This is the taste of a liar {{Global.grandma.character_name}}!
