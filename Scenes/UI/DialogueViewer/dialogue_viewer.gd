@@ -20,7 +20,6 @@ func _ready() -> void:
 	SignalBus.emit_signal("start_dialogue_reader", Global.grandma.intro_resource)
 
 func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> void:
-	print("DialogueViewer: _add_dialogue")
 	var instance: DialogueItem
 	if (is_inner_thoughts):
 		instance = inner_thoughts_scene.instantiate()
@@ -38,7 +37,6 @@ func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> v
 	SignalBus.emit_signal("process_next_dialogue")
 
 func _add_options(options: Array[DialogueResponse]) -> void:
-	print("DialogueViewer: _add_options")
 	var instance = options_dialogue_scene.instantiate() as OptionsDialogue
 	instance.set_options(options)
 	dialogue_display.add_child(instance)
@@ -47,7 +45,6 @@ func _add_options(options: Array[DialogueResponse]) -> void:
 	scroll_container.scroll_vertical = scroll_container.get_v_scroll_bar().max_value
 
 func _choose_option(option: DialogueResponse) -> void:
-	print("DialogueViewer: _choose_option")
 	var instance = normal_dialogue_scene.instantiate() as DialogueItem
 	instance.set_character_name("You", false)
 	instance.set_dialogue(option.text)
@@ -62,7 +59,6 @@ func _choose_option(option: DialogueResponse) -> void:
 	SignalBus.emit_signal("process_chosen_option", option)
 
 func _add_continue_button() -> void:
-	print("DialogueViewer: _add_continue_button")
 	var button = continue_button.instantiate()
 	dialogue_display.add_child(button)
 	dialogue_display.queue_redraw()
@@ -70,7 +66,6 @@ func _add_continue_button() -> void:
 	scroll_container.scroll_vertical = scroll_container.get_v_scroll_bar().max_value
 
 func _continue_button_clicked() -> void:
-	print("DialogueViewer: _continue_button_clicked")
 	var continue_button = dialogue_display.get_child(dialogue_display.get_child_count() - 1)
 	dialogue_display.remove_child(continue_button)
 	continue_button.queue_free()
