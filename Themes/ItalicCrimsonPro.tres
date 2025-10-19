@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bud7sr1v2j7hg"]
+
+[ext_resource type="FontFile" uid="uid://drpvm8ch4x7ey" path="res://Themes/CrimsonPro-Italic.ttf" id="1_gtius"]
+
+[resource]
+default_font = ExtResource("1_gtius")
+default_font_size = 20

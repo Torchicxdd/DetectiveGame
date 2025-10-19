@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqxlcolok057w"]
+
+[ext_resource type="Texture2D" uid="uid://dtjuwkemhfdu6" path="res://Scenes/UI/EvidenceItem/item_border.png" id="1_66kqd"]
+[ext_resource type="Script" uid="uid://ci3ljaluegrgk" path="res://Scenes/UI/EvidenceItem/evidence_item.gd" id="1_qapms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upoh7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="SystemFont" id="SystemFont_upoh7"]
+subpixel_positioning = 0
+
+[node name="EvidenceItem" type="Button"]
+anchors_preset = -1
+anchor_right = 0.112
+anchor_bottom = 0.193
+offset_right = -0.27000427
+offset_bottom = 1.3999939
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_upoh7")
+script = ExtResource("1_qapms")
+
+[node name="ItemBorder" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.72
+offset_right = 0.046325684
+texture = ExtResource("1_66kqd")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Item" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.72
+offset_right = 0.043060303
+offset_bottom = -0.03265381
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.091934204
+offset_right = 1.2299957
+offset_bottom = -0.026733398
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+theme_override_fonts/font = SubResource("SystemFont_upoh7")
+theme_override_font_sizes/font_size = 12
+text = "Item name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

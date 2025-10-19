@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgou2o75ykixk"]
+
+[ext_resource type="Script" uid="uid://c14cvrr1qidcw" path="res://Scenes/UI/Dialogue/dialogue_item.gd" id="1_4by7y"]
+[ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="3_rsnqj"]
+
+[node name="DialogueItem" type="VBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.19000001
+offset_right = 0.19998169
+theme_override_constants/separation = 14
+script = ExtResource("1_4by7y")
+
+[node name="Character" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("3_rsnqj")
+theme_override_colors/font_color = Color(0.4862745, 0.4862745, 0.4862745, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="Dialogue" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme = ExtResource("3_rsnqj")
+theme_override_colors/default_color = Color(0.91764706, 0.91764706, 0.91764706, 1)
+theme_override_constants/line_separation = 8
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true

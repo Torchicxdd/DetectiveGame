@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d1nma2vcm82mx"
+path="res://.godot/imported/TeenagerEvidenceOne.dialogue-828f6e2eaa50d90e389df12420ae6cb9.tres"
+
+[deps]
+
+source_file="res://Dialogues/EvidenceOne/TeenagerEvidenceOne.dialogue"
+dest_files=["res://.godot/imported/TeenagerEvidenceOne.dialogue-828f6e2eaa50d90e389df12420ae6cb9.tres"]
+
+[params]
+
+defaults=true

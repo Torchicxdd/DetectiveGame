@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://qxsvm28ij5sf"]
+
+[ext_resource type="Shader" uid="uid://blic7psylu8rp" path="res://Shaders/CRTShader.gdshader" id="1_sa4sy"]
+
+[resource]
+shader = ExtResource("1_sa4sy")
+shader_parameter/scanline_strength = 0.3
+shader_parameter/scanline_count = 300.0
+shader_parameter/curvature = 10.0
+shader_parameter/vignette_strength = 0.2000000095
+shader_parameter/brightness = 1.2500000356249998
+shader_parameter/tint = Color(0.55378896, 0.779785, 0.45985502, 1)
+shader_parameter/noise_amount = 0.250000011875
+shader_parameter/scanline_speed = 0.1
