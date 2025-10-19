@@ -9,6 +9,7 @@ var junkie: Character = Junkie.new()
 var little_child: Character = DonCandy.new()
 var salaryman: Character = SalaryMan.new()
 var teenager: Character = Teenager.new()
+var detective: Character = Detective.new()
 
 var meter_percentage: float = 50.0:
 	set(new_value):
