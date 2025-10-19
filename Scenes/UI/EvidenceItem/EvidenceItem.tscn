@@ -1,19 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqxlcolok057w"]
+[gd_scene load_steps=5 format=3 uid="uid://bqxlcolok057w"]
 
 [ext_resource type="Texture2D" uid="uid://dtjuwkemhfdu6" path="res://Scenes/UI/EvidenceItem/item_border.png" id="1_66kqd"]
 [ext_resource type="Script" uid="uid://ci3ljaluegrgk" path="res://Scenes/UI/EvidenceItem/evidence_item.gd" id="1_qapms"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upoh7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="SystemFont" id="SystemFont_upoh7"]
 subpixel_positioning = 0
 
-[node name="EvidenceItem" type="Control"]
-layout_mode = 3
+[node name="EvidenceItem" type="Button"]
+anchors_preset = -1
 anchor_right = 0.112
 anchor_bottom = 0.193
 offset_right = -0.27000427
 offset_bottom = 1.3999939
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_upoh7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_upoh7")
 script = ExtResource("1_qapms")
 
 [node name="ItemBorder" type="TextureRect" parent="."]
@@ -56,3 +64,5 @@ text = "Item name"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

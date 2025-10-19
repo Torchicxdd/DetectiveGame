@@ -1,10 +1,16 @@
-extends Control
+class_name ItemViewer extends Control
 
 @onready var content_viewport = $SubViewportContainer/ContentViewport
-@onready var evidence_grid = $SubViewportContainer/ContentViewport/EvidenceGrid
-@onready var page_count = $SubViewportContainer/ContentViewport/ItemsTitle/MarginContainer/PageCount
+@onready var evidence_grid = $SubViewportContainer/ContentViewport/ItemSelect/EvidenceGrid
+@onready var page_count = $SubViewportContainer/ContentViewport/ItemSelect/ItemsTitle/MarginContainer/PageCount
+@onready var item_select_scene = $SubViewportContainer/ContentViewport/ItemSelect
+@onready var item_description_scene = $SubViewportContainer/ContentViewport/ItemDescription
+@onready var item_description_hbox = $SubViewportContainer/ContentViewport/ItemDescription/HBoxContainer
+@onready var item_description_scene_item_holder = $SubViewportContainer/ContentViewport/ItemDescription/HBoxContainer/ItemHolder
+@onready var item_description_scene_desc = $SubViewportContainer/ContentViewport/ItemDescription/HBoxContainer/Description
 
 var evidence_scene = preload("res://Scenes/UI/EvidenceItem/EvidenceItem.tscn")
+var evidence_desc_image = preload("res://Scenes/UI/ItemViewer/ItemDescriptionImage.tscn")
 
 var current_page = 0
 var total_page_count = 1
@@ -25,7 +31,7 @@ func set_items_in_viewer() -> void:
 			var item  = Items.items_list[i + (grid_limit * current_page)]
 			var scene = evidence_scene.instantiate() as EvidenceItem
 			if item.is_unlocked:
-				scene.set_item_image_and_name(item.image,item.ItemName)
+				scene.set_item(item)
 			evidence_grid.add_child(scene)
 		else:
 			var left_to_put = grid_limit - i
@@ -75,3 +81,16 @@ func reset_evidence_grid() -> void:
 	set_page_count_ui()
 	clear_evidence_grid()
 	set_items_in_viewer()
+
+func open_item_description(item: Evidence) -> void:
+	item_select_scene.visible = false
+	item_description_scene.visible = true
+	
+	var evidence_item = evidence_desc_image.instantiate() as ItemDescriptionImage
+	evidence_item.set_item(item)
+	
+	for i in item_description_scene_item_holder.get_children():
+		i.queue_free()
+	
+	item_description_scene_item_holder.add_child(evidence_item)
+	item_description_scene_desc.text = item.desc

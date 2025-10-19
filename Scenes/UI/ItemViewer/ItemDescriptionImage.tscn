@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3jgyvpnar3y8"]
+
+[ext_resource type="Texture2D" uid="uid://dtjuwkemhfdu6" path="res://Scenes/UI/EvidenceItem/item_border.png" id="1_0y3sb"]
+[ext_resource type="Script" uid="uid://cenoqu2dy0js1" path="res://Scenes/UI/ItemViewer/item_description_image.gd" id="1_v0biq"]
+[ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="2_xmw7g"]
+
+[node name="ItemDescriptionImage" type="Control"]
+custom_minimum_size = Vector2(215, 210)
+layout_mode = 3
+anchor_right = 0.14600001
+anchor_bottom = 0.268
+offset_right = -0.32003784
+offset_bottom = 0.07998657
+script = ExtResource("1_v0biq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.116000004
+anchor_right = 0.88400006
+anchor_bottom = 0.725
+offset_left = 0.020000458
+offset_right = -0.020019531
+offset_bottom = 0.0980072
+grow_horizontal = 2
+
+[node name="Border" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(215, 210)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0y3sb")
+expand_mode = 1
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.116000004
+anchor_right = 0.88400006
+anchor_bottom = 0.725
+offset_left = 0.020000458
+offset_right = -0.020019531
+offset_bottom = 0.0980072
+grow_horizontal = 2
+
+[node name="Item" type="TextureRect" parent="Control2"]
+custom_minimum_size = Vector2(215, 210)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.86200005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 16.95375
+grow_vertical = 0
+theme = ExtResource("2_xmw7g")
+theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1

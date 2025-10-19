@@ -8,6 +8,7 @@ signal open_dialogue_viewer()
 signal close_dialogue_viewer()
 signal open_item_viewer()
 signal close_item_viewer()
+signal open_item_description(item: Evidence)
 
 # Logic Signals
 signal set_character_info(character: Character)

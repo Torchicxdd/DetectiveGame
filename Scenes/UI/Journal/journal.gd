@@ -42,7 +42,7 @@ func add_evidence_items(character: Character) -> void:
 			if i.relations.has(character):
 				var scene = evidence_scene.instantiate() as EvidenceItem
 				if (i.relations.get(character)):
-					scene.set_item_image_and_name(i.image,i.ItemName)
+					scene.set_item(i)
 				$EvidenceGrid.add_child(scene)
 				counter += 1
 	

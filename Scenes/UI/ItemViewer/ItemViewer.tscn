@@ -83,8 +83,9 @@ anchor_right = 0.767
 anchor_bottom = 0.929
 offset_left = -0.80999756
 offset_top = 0.13999176
-offset_right = 0.39990234
-offset_bottom = -0.33996582
+offset_right = 2.1899414
+offset_bottom = 0.38000488
+stretch = true
 
 [node name="ContentViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
@@ -100,7 +101,16 @@ offset_right = -1307.0
 offset_bottom = -875.0
 texture = ExtResource("2_boqq0")
 
-[node name="EvidenceGrid" type="GridContainer" parent="SubViewportContainer/ContentViewport"]
+[node name="ItemSelect" type="Control" parent="SubViewportContainer/ContentViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EvidenceGrid" type="GridContainer" parent="SubViewportContainer/ContentViewport/ItemSelect"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.18900001
 anchor_top = 0.089
@@ -114,8 +124,8 @@ theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 17
 columns = 4
 
-[node name="ItemsTitle" type="Control" parent="SubViewportContainer/ContentViewport"]
-layout_mode = 3
+[node name="ItemsTitle" type="Control" parent="SubViewportContainer/ContentViewport/ItemSelect"]
+layout_mode = 1
 anchor_left = 0.18900001
 anchor_top = 0.814
 anchor_right = 0.845
@@ -125,14 +135,16 @@ offset_top = 0.030029297
 offset_right = -0.115112305
 offset_bottom = -0.21002197
 
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/ContentViewport/ItemsTitle"]
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/ContentViewport/ItemSelect/ItemsTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.08235294, 0.08235294, 0.08235294, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/ContentViewport/ItemsTitle"]
+[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/ContentViewport/ItemSelect/ItemsTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,7 +156,7 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 8
 
-[node name="Label" type="Label" parent="SubViewportContainer/ContentViewport/ItemsTitle/MarginContainer"]
+[node name="Label" type="Label" parent="SubViewportContainer/ContentViewport/ItemSelect/ItemsTitle/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("4_o8gm1")
 theme_override_colors/font_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
@@ -152,12 +164,41 @@ theme_override_font_sizes/font_size = 24
 text = "ALL ITEMS"
 vertical_alignment = 1
 
-[node name="PageCount" type="Label" parent="SubViewportContainer/ContentViewport/ItemsTitle/MarginContainer"]
+[node name="PageCount" type="Label" parent="SubViewportContainer/ContentViewport/ItemSelect/ItemsTitle/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("4_o8gm1")
 theme_override_font_sizes/font_size = 28
 text = "1 / 8"
+
+[node name="ItemDescription" type="Control" parent="SubViewportContainer/ContentViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/ContentViewport/ItemDescription"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.115
+anchor_top = 0.120000005
+anchor_right = 0.88400006
+anchor_bottom = 0.82400006
+theme_override_constants/separation = 80
+
+[node name="ItemHolder" type="Control" parent="SubViewportContainer/ContentViewport/ItemDescription/HBoxContainer"]
+custom_minimum_size = Vector2(280, 289.52)
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="SubViewportContainer/ContentViewport/ItemDescription/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_o8gm1")
+theme_override_colors/default_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+theme_override_constants/line_separation = 18
+theme_override_font_sizes/normal_font_size = 18
 
 [node name="Border" type="TextureRect" parent="."]
 layout_mode = 1
@@ -172,6 +213,7 @@ offset_right = -0.8300781
 offset_bottom = -0.030029297
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_cvd24")
 
 [node name="ControlPanel" type="Control" parent="."]
