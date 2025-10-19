@@ -57,6 +57,23 @@ func _on_items_list_button_clicked() -> void:
 		reset_evidence_grid()
 		SignalBus.emit_signal("enable_next_button")
 		SignalBus.emit_signal("disable_previous_button")
+		
+	if not item_select_scene.visible:
+		make_item_select_scene_visible()
+		current_page = 0
+		reset_evidence_grid()
+		set_page_count()
+		
+		if (current_page + 1 == total_page_count):
+			SignalBus.emit_signal("disable_next_button")
+		else:
+			SignalBus.emit_signal("enable_next_button")
+		
+		if (current_page == 0):
+			SignalBus.emit_signal("disable_previous_button")
+		else:
+			SignalBus.emit_signal("enable_previous_button")
+		
 
 func _on_previous_button_clicked() -> void:
 	if (current_page + 1 == total_page_count):
@@ -83,9 +100,6 @@ func reset_evidence_grid() -> void:
 	set_items_in_viewer()
 
 func open_item_description(item: Evidence) -> void:
-	item_select_scene.visible = false
-	item_description_scene.visible = true
-	
 	var evidence_item = evidence_desc_image.instantiate() as ItemDescriptionImage
 	evidence_item.set_item(item)
 	
@@ -94,3 +108,14 @@ func open_item_description(item: Evidence) -> void:
 	
 	item_description_scene_item_holder.add_child(evidence_item)
 	item_description_scene_desc.text = item.desc
+	make_desc_scene_visible()
+
+func make_desc_scene_visible() -> void:
+	item_select_scene.visible = false
+	item_description_scene.visible = true
+	SignalBus.emit_signal("disable_next_button")
+	SignalBus.emit_signal("disable_previous_button")
+
+func make_item_select_scene_visible() -> void:
+	item_select_scene.visible = true
+	item_description_scene.visible = false
