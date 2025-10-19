@@ -1,6 +1,8 @@
 extends Node
 
 # UI Signals
+signal load_game()
+signal open_settings()
 signal open_journal()
 signal close_journal()
 signal open_character_page(tab_num: int)

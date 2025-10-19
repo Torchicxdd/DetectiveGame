@@ -1,13 +1,15 @@
 class_name Main extends Node
 
 # Change this scene to load a specific scene first
+var main_menu = preload("res://Scenes/UI/Menus/MainMenu.tscn").instantiate()
 var first_scene = preload("res://Scenes/World/InterrogationRoom/InterrogationRoom.tscn").instantiate()
 
 func _init() -> void:
 	Global.main = self
 
 func _ready() -> void:
-	addWorldScene(first_scene)
+	SignalBus.load_game.connect(_load_game)
+	addGUIScene(main_menu)
 	
 # World scene helper functions
 func addWorldScene(scene: Node2D) -> void:
@@ -54,3 +56,7 @@ func showGUIScene(scene: Control) -> void:
 func deleteGUIScene(scene: Control) -> void:
 	if (scene in $GUI.get_children()):
 		scene.queue_free()
+
+func _load_game() -> void:
+	deleteGUIScene(main_menu)
+	addWorldScene(first_scene)
