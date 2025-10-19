@@ -7,21 +7,21 @@
 [node name="ItemDescriptionImage" type="Control"]
 custom_minimum_size = Vector2(215, 210)
 layout_mode = 3
-anchor_right = 0.14600001
-anchor_bottom = 0.268
-offset_right = -0.32003784
-offset_bottom = 0.07998657
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_v0biq")
 
 [node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(215, 210)
 layout_mode = 1
-anchor_left = 0.116000004
-anchor_right = 0.88400006
-anchor_bottom = 0.725
-offset_left = 0.020000458
-offset_right = -0.020019531
-offset_bottom = 0.0980072
-grow_horizontal = 2
+anchors_preset = 0
+offset_left = 34.77
+offset_top = 12.0
+offset_right = 249.77
+offset_bottom = 222.0
 
 [node name="Border" type="TextureRect" parent="Control"]
 custom_minimum_size = Vector2(215, 210)
@@ -35,14 +35,13 @@ texture = ExtResource("1_0y3sb")
 expand_mode = 1
 
 [node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(215, 210)
 layout_mode = 1
-anchor_left = 0.116000004
-anchor_right = 0.88400006
-anchor_bottom = 0.725
-offset_left = 0.020000458
-offset_right = -0.020019531
-offset_bottom = 0.0980072
-grow_horizontal = 2
+anchors_preset = 0
+offset_left = 34.77
+offset_top = 12.0
+offset_right = 249.77
+offset_bottom = 222.0
 
 [node name="Item" type="TextureRect" parent="Control2"]
 custom_minimum_size = Vector2(215, 210)
@@ -56,12 +55,9 @@ expand_mode = 1
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.86200005
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 16.95375
-grow_vertical = 0
+offset_top = 265.52
+offset_right = 280.0
+offset_bottom = 305.52
 theme = ExtResource("2_xmw7g")
 theme_override_colors/font_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
 theme_override_font_sizes/font_size = 32

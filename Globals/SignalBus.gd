@@ -9,6 +9,7 @@ signal close_dialogue_viewer()
 signal open_item_viewer()
 signal close_item_viewer()
 signal open_item_description(item: Evidence)
+signal instantiate_interrogation_room_scene_buttons()
 
 # Logic Signals
 signal set_character_info(character: Character)

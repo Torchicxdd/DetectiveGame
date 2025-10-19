@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://d3nm6fijc7b38"]
+[gd_scene load_steps=35 format=3 uid="uid://d3nm6fijc7b38"]
 
 [ext_resource type="Texture2D" uid="uid://c0hco324vclok" path="res://Scenes/UI/ItemViewer/background.png" id="1_cvd24"]
 [ext_resource type="Script" uid="uid://bkunsylclq4dq" path="res://Scenes/UI/ItemViewer/item_viewer.gd" id="1_fvytp"]
+[ext_resource type="Texture2D" uid="uid://ch6iqewjlw1n2" path="res://Scenes/UI/ItemViewer/item_viewer_background.png" id="2_8y74f"]
 [ext_resource type="Texture2D" uid="uid://cayq08iq6bdo7" path="res://Scenes/UI/ItemViewer/tv_background.png" id="2_boqq0"]
 [ext_resource type="Material" uid="uid://qxsvm28ij5sf" path="res://Materials/CRTMaterial.tres" id="4_k8l1a"]
 [ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="4_o8gm1"]
@@ -72,6 +73,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fvytp")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8y74f")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = ExtResource("4_k8l1a")

@@ -12,18 +12,22 @@ class_name ItemViewer extends Control
 var evidence_scene = preload("res://Scenes/UI/EvidenceItem/EvidenceItem.tscn")
 var evidence_desc_image = preload("res://Scenes/UI/ItemViewer/ItemDescriptionImage.tscn")
 
+var grid_limit = 12
 var current_page = 0
 var total_page_count = 1
-var grid_limit = 12
 
 func _ready() -> void:
 	SignalBus.connect("on_items_list_button_clicked", Callable(self, "_on_items_list_button_clicked"))
 	SignalBus.connect("on_previous_button_clicked", Callable(self, "_on_previous_button_clicked"))
 	SignalBus.connect("on_next_button_clicked", Callable(self, "_on_next_button_clicked"))
 	
+	item_select_scene.visible = true
+	item_description_scene.visible = false
+	
 	set_page_count()
 	set_page_count_ui()
 	set_items_in_viewer()
+	set_button_status()
 
 func set_items_in_viewer() -> void:
 	for i in range(grid_limit):
@@ -63,16 +67,7 @@ func _on_items_list_button_clicked() -> void:
 		current_page = 0
 		reset_evidence_grid()
 		set_page_count()
-		
-		if (current_page + 1 == total_page_count):
-			SignalBus.emit_signal("disable_next_button")
-		else:
-			SignalBus.emit_signal("enable_next_button")
-		
-		if (current_page == 0):
-			SignalBus.emit_signal("disable_previous_button")
-		else:
-			SignalBus.emit_signal("enable_previous_button")
+		set_button_status()
 		
 
 func _on_previous_button_clicked() -> void:
@@ -119,3 +114,14 @@ func make_desc_scene_visible() -> void:
 func make_item_select_scene_visible() -> void:
 	item_select_scene.visible = true
 	item_description_scene.visible = false
+
+func set_button_status() -> void:
+	if (current_page + 1 == total_page_count):
+		SignalBus.emit_signal("disable_next_button")
+	else:
+		SignalBus.emit_signal("enable_next_button")
+	
+	if (current_page == 0):
+		SignalBus.emit_signal("disable_previous_button")
+	else:
+		SignalBus.emit_signal("enable_previous_button")
