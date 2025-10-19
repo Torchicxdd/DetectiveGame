@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkwmauh7wdpjw"]
+
+[ext_resource type="Texture2D" uid="uid://58beiavtj7l3" path="res://Scenes/UI/Meter/MeterBg.png" id="1_0jj06"]
+[ext_resource type="Script" uid="uid://cv1ahgw2h8hmi" path="res://Scenes/UI/Meter/meter.gd" id="1_h7x2f"]
+[ext_resource type="Texture2D" uid="uid://dbqhfu3mxegcm" path="res://Scenes/UI/Meter/MeterTitleImage.png" id="1_uco7c"]
+[ext_resource type="Theme" uid="uid://bq6s1ll3u64e1" path="res://Themes/MediumTheme.tres" id="3_h7x2f"]
+
+[node name="Meter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 909.0
+offset_right = -1608.33
+offset_bottom = -69.42999
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7x2f")
+
+[node name="MeterTitle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.245
+anchor_top = 0.29500002
+anchor_right = 1.0
+anchor_bottom = 0.85700005
+offset_left = -0.11916351
+offset_top = -0.033153534
+offset_right = 0.0099487305
+offset_bottom = -0.01550293
+texture = ExtResource("1_uco7c")
+
+[node name="Percentage" type="TextureRect" parent="."]
+clip_children = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.34100002
+anchor_bottom = 1.0
+offset_right = 0.042510986
+offset_bottom = 3.4299927
+texture = ExtResource("1_0jj06")
+
+[node name="PercentageBlackBg" type="ColorRect" parent="Percentage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.109000005
+anchor_top = -0.505
+anchor_right = 1.174
+anchor_bottom = 0.59000003
+offset_left = 0.028000832
+offset_top = -61.975002
+offset_right = -0.008003235
+offset_bottom = -61.950005
+color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+
+[node name="PercentageText" type="Label" parent="Percentage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109000005
+anchor_top = 0.39000002
+anchor_right = 0.94600004
+anchor_bottom = 0.762
+offset_left = -0.028000832
+offset_top = 0.049999237
+offset_right = -1.0320053
+offset_bottom = 0.98999786
+theme = ExtResource("3_h7x2f")
+theme_override_colors/font_color = Color(0.99215686, 0.94509804, 0.8156863, 1)
+theme_override_font_sizes/font_size = 30
+text = "00%"
+horizontal_alignment = 1
+vertical_alignment = 1

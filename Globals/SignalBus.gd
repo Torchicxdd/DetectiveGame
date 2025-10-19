@@ -35,3 +35,6 @@ signal disable_next_button()
 signal enable_next_button()
 signal disable_previous_button()
 signal enable_previous_button()
+
+# Meter Signals
+signal meter_percentage_changed(new_percentage: float)
