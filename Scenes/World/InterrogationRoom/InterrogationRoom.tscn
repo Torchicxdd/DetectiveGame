@@ -3,10 +3,8 @@
 [ext_resource type="Script" uid="uid://dvshcd08phyff" path="res://Scenes/World/InterrogationRoom/interrogation_room.gd" id="1_w803g"]
 [ext_resource type="Texture2D" uid="uid://cbxothm084kms" path="res://Scenes/World/InterrogationRoom/interrogation_room.png" id="1_y1kus"]
 
-[node name="InterrogationRoom" type="Node2D"]
-script = ExtResource("1_w803g")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.1888545, 1)
+[node name="InterrogationRoom" type="TextureRect"]
+offset_right = 1615.0
+offset_bottom = 1080.0
 texture = ExtResource("1_y1kus")
-centered = false
+script = ExtResource("1_w803g")

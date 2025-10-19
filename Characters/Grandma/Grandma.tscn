@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwjqblsyy576o"]
+
+[ext_resource type="Script" uid="uid://b7hl114tky620" path="res://Characters/Grandma/grandma_scene.gd" id="1_0o0wq"]
+[ext_resource type="Texture2D" uid="uid://eitbo1s8s0rl" path="res://Characters/Grandma/grandma.png" id="1_w88aq"]
+
+[node name="Grandma" type="TextureButton"]
+texture_normal = ExtResource("1_w88aq")
+script = ExtResource("1_0o0wq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

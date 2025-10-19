@@ -17,7 +17,10 @@ var height: int
 var gender: String
 var hair_color: String
 var headshot: Texture2D
+var interrogation_room_texture: Texture2D
 
-# Resources
-var intro_resource: DialogueResource
-var evidence_one_resource: DialogueResource
+# Dialogue Resources
+var stage_dialogue_resources = {
+	Global.Stage.INTRO: null,
+	Global.Stage.ACT1: null,
+}

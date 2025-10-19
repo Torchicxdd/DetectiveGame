@@ -2,6 +2,8 @@ class_name DialogueViewer extends Control
 
 @onready var dialogue_display = $ScrollContainer/MarginContainer/VDialogueDisplay
 @onready var scroll_container = $ScrollContainer
+@onready var character_image = $CharacterDisplay/CharacterImage
+@onready var character_name = $CharacterDisplay/VBoxContainer/CharacterName
 
 var normal_dialogue_scene = preload("res://Scenes/UI/Dialogue/NormalDialogue.tscn")
 var inner_thoughts_scene = preload("res://Scenes/UI/Dialogue/InnerThoughtsDialogue.tscn")
@@ -9,7 +11,10 @@ var options_dialogue_scene = preload("res://Scenes/UI/Dialogue/OptionsDialogue.t
 var continue_button = preload("res://Scenes/UI/Dialogue/ContinueButton/ContinueButton.tscn")
 
 # Create dialogue reader
-var dialogue_reader = DialogueReader.new()
+var dialogue_reader: DialogueReader
+
+func _init() -> void:
+	dialogue_reader = DialogueReader.new()
 
 func _ready() -> void:
 	SignalBus.connect("add_dialogue", Callable(self, "_add_dialogue"))
@@ -17,7 +22,19 @@ func _ready() -> void:
 	SignalBus.connect("choose_option", Callable(self, "_choose_option"))
 	SignalBus.connect("add_continue_button", Callable(self, "_add_continue_button"))
 	SignalBus.connect("continue_button_clicked", Callable(self, "_continue_button_clicked"))
-	SignalBus.emit_signal("start_dialogue_reader", Global.grandma.intro_resource, Global.grandma, Global.Stage.INTRO)
+	
+	character_image.texture = Global.current_character.headshot
+	character_name.text = Global.current_character.character_name
+	
+	SignalBus.emit_signal("start_dialogue_reader", Global.current_character.stage_dialogue_resources[Global.current_stage], Global.current_character, Global.current_stage)
+
+func _exit_tree() -> void:
+	dialogue_reader.cleanup()
+	SignalBus.disconnect("add_dialogue", Callable(self, "_add_dialogue"))
+	SignalBus.disconnect("add_options", Callable(self, "_add_options"))
+	SignalBus.disconnect("choose_option", Callable(self, "_choose_option"))
+	SignalBus.disconnect("add_continue_button", Callable(self, "_add_continue_button"))
+	SignalBus.disconnect("continue_button_clicked", Callable(self, "_continue_button_clicked"))
 
 func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> void:
 	var instance: DialogueItem

@@ -17,6 +17,12 @@ func _init() -> void:
 	SignalBus.connect("on_continue_button_deleted", Callable(self, "_add_dialogue"))
 	SignalBus.connect("process_next_dialogue", Callable(self, "_process_next_dialogue"))
 
+func cleanup() -> void:
+	SignalBus.disconnect("start_dialogue_reader", Callable(self, "_start_dialogue_reader"))
+	SignalBus.disconnect("process_chosen_option", Callable(self, "_process_chosen_option"))
+	SignalBus.disconnect("on_continue_button_deleted", Callable(self, "_add_dialogue"))
+	SignalBus.disconnect("process_next_dialogue", Callable(self, "_process_next_dialogue"))
+
 func _start_dialogue_reader(resource: DialogueResource, character: Character, stage: Global.Stage) -> void:
 	current_stage = stage
 	current_character_object = character
@@ -36,7 +42,8 @@ func _process_next_dialogue() -> void:
 func process_dialogue_line() -> void:
 	if (current_dialogue_line == null):
 		# Empty dialogue line. No more dialogue
-		SignalBus.emit_signal("end_dialogue")
+		Global.meter_percentage -= 1
+		SignalBus.emit_signal("switch_to_character_select_room")
 	elif (current_dialogue_line.text != ""):
 		# Simple dialogue
 		next_dialogue_id = current_dialogue_line.next_id
@@ -52,11 +59,7 @@ func process_dialogue_line() -> void:
 		SignalBus.emit_signal("add_options", responses)
 
 func _process_chosen_option(response: DialogueResponse) -> void:
-	# Add meter percentage and cap it per character per stage
-	if (current_character_object.stage_max_clicks[current_stage] > 0):
-		Global.meter_percentage += 1
-		current_character_object.stage_max_clicks[current_stage] -= 1
-	
+	increase_meter()
 	next_dialogue_id = response.next_id
 	_process_next_dialogue()
 
@@ -70,3 +73,9 @@ func check_if_add_continue_button() -> void:
 
 func _add_dialogue() -> void:
 	SignalBus.emit_signal("add_dialogue", current_character, current_dialogue_line.text, current_is_inner_thoughts)
+
+func increase_meter() -> void:
+	# Add meter percentage and cap it per character per stage
+	if (current_character_object.stage_max_clicks[current_stage] > 0):
+		Global.meter_percentage += 1
+		current_character_object.stage_max_clicks[current_stage] -= 1

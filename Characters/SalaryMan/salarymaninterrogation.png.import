@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk473nef6ue7j"
-path="res://.godot/imported/LittleChildHeadshot.png-7183077a0b79001cefc7fc4bdf491947.ctex"
+uid="uid://dqe21h8f4ij3n"
+path="res://.godot/imported/salarymaninterrogation.png-688f01df8c66e69571603e0ee9dd369f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/DonCandy/LittleChildHeadshot.png"
-dest_files=["res://.godot/imported/LittleChildHeadshot.png-7183077a0b79001cefc7fc4bdf491947.ctex"]
+source_file="res://Characters/SalaryMan/salarymaninterrogation.png"
+dest_files=["res://.godot/imported/salarymaninterrogation.png-688f01df8c66e69571603e0ee9dd369f.ctex"]
 
 [params]
 

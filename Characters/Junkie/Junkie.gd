@@ -7,5 +7,8 @@ func _init() -> void:
 	gender = "Male"
 	hair_color = "Grey"
 	headshot = preload("res://Characters/Junkie/JunkieHeadshot.png")
+	interrogation_room_texture = preload("res://Characters/Junkie/junkieinterrogation.png")
 	
 	stage_max_clicks[Global.Stage.INTRO] = 4
+	
+	stage_dialogue_resources[Global.Stage.INTRO] = preload("res://Dialogues/Intro/JunkieIntro.dialogue")

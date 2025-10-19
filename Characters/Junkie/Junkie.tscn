@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bib6eds06q1qc"]
+
+[ext_resource type="Texture2D" uid="uid://k3f0j8mh6gxi" path="res://Characters/Junkie/junkie.png" id="1_rftne"]
+[ext_resource type="Script" uid="uid://mitwwgflarpe" path="res://Characters/Junkie/junkie_scene.gd" id="1_wm8e1"]
+
+[node name="Junkie" type="TextureButton"]
+texture_normal = ExtResource("1_rftne")
+script = ExtResource("1_wm8e1")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

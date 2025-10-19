@@ -17,6 +17,7 @@ func addWorldScene(scene: Node2D) -> void:
 		$World.add_child(scene)
 	else:
 		scene.visible = true
+		scene.move_to_front()
 	
 func removeWorldScene(scene: Node2D) -> void:
 	if (scene in $World.get_children()):
@@ -29,6 +30,7 @@ func hideWorldScene(scene: Node2D) -> void:
 func showWorldScene(scene: Node2D) -> void:
 	if (scene in $World.get_children()):
 		scene.visible = true
+		scene.move_to_front()
 
 func deleteWorldScene(scene: Node2D) -> void:
 	if (scene in $World.get_children()):
@@ -40,6 +42,7 @@ func addGUIScene(scene: Control) -> void:
 		$GUI.add_child(scene)
 	else:
 		scene.visible = true
+		scene.move_to_front()
 	
 func removeGUIScene(scene: Control) -> void:
 	if (scene in $GUI.get_children()):
@@ -52,6 +55,7 @@ func hideGUIScene(scene: Control) -> void:
 func showGUIScene(scene: Control) -> void:
 	if (scene in $GUI.get_children()):
 		scene.visible = true
+		scene.move_to_front()
 
 func deleteGUIScene(scene: Control) -> void:
 	if (scene in $GUI.get_children()):
@@ -59,4 +63,4 @@ func deleteGUIScene(scene: Control) -> void:
 
 func _load_game() -> void:
 	deleteGUIScene(main_menu)
-	addWorldScene(first_scene)
+	SignalBus.switch_to_character_select_room.emit()

@@ -52,6 +52,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_t0ngk")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7ay01")
 text = "dsadsadsa"
 alignment = 0
+autowrap_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

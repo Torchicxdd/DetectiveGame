@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://drsocmov5pca5"]
+
+[ext_resource type="Texture2D" uid="uid://ch6iqewjlw1n2" path="res://Scenes/UI/ItemViewer/item_viewer_background.png" id="1_oo68f"]
+[ext_resource type="Script" uid="uid://hn0alpmnss40" path="res://Scenes/World/CharacterSelect/character_select.gd" id="1_swuol"]
+[ext_resource type="PackedScene" uid="uid://bcuh4377log2x" path="res://Characters/DonCandy/DonCandy.tscn" id="2_7rvw5"]
+[ext_resource type="PackedScene" uid="uid://dbx2unb7hu7xw" path="res://Characters/SalaryMan/SalaryMan.tscn" id="3_u5l05"]
+[ext_resource type="PackedScene" uid="uid://bib6eds06q1qc" path="res://Characters/Junkie/Junkie.tscn" id="4_ef4y6"]
+[ext_resource type="PackedScene" uid="uid://dwjqblsyy576o" path="res://Characters/Grandma/Grandma.tscn" id="5_eoj5k"]
+[ext_resource type="PackedScene" uid="uid://do5hrrq6g61jh" path="res://Characters/Teenager/Teenager.tscn" id="6_murur"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_swuol")
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_oo68f")
+
+[node name="Characters" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DonCandy" parent="Characters" instance=ExtResource("2_7rvw5")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="SalaryMan" parent="Characters" instance=ExtResource("3_u5l05")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Junkie" parent="Characters" instance=ExtResource("4_ef4y6")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Grandma" parent="Characters" instance=ExtResource("5_eoj5k")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Teenager" parent="Characters" instance=ExtResource("6_murur")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8

@@ -7,6 +7,10 @@ func _ready() -> void:
 	SignalBus.connect("set_character_info", Callable(self, "_set_character_info"))
 	SignalBus.emit_signal("open_character_page", 0)
 
+func _exit_tree() -> void:
+	SignalBus.disconnect("close_journal", Callable(self, "_close_journal"))
+	SignalBus.disconnect("set_character_info", Callable(self, "_set_character_info"))
+
 func _close_journal() -> void:
 	Global.main.deleteGUIScene(self)
 

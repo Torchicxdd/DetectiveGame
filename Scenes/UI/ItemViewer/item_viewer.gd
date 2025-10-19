@@ -29,6 +29,11 @@ func _ready() -> void:
 	set_items_in_viewer()
 	set_button_status()
 
+func _exit_tree() -> void:
+	SignalBus.disconnect("on_items_list_button_clicked", Callable(self, "_on_items_list_button_clicked"))
+	SignalBus.disconnect("on_previous_button_clicked", Callable(self, "_on_previous_button_clicked"))
+	SignalBus.disconnect("on_next_button_clicked", Callable(self, "_on_next_button_clicked"))
+
 func set_items_in_viewer() -> void:
 	for i in range(grid_limit):
 		if (i + (grid_limit * current_page) < Items.items_list.size()):

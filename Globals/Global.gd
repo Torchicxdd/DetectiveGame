@@ -4,6 +4,9 @@ var main: Main
 
 var randomizer: Randomizer = Randomizer.new()
 
+var current_character: Character
+var current_stage: Stage = Stage.INTRO
+
 var grandma: Character = Grandma.new()
 var junkie: Character = Junkie.new()
 var little_child: Character = DonCandy.new()

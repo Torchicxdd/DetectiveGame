@@ -1,6 +1,4 @@
-class_name InterrogationRoom extends Node2D
+class_name InterrogationRoom extends TextureRect
 
-func _ready() -> void:
-	SignalBus.emit_signal("instantiate_interrogation_room_scene_buttons")
-	SignalBus.emit_signal("open_dialogue_viewer")
-	SignalBus.instantiate_meter.emit()
+func set_background_texture(bg_texture: Texture2D) -> void:
+	texture = bg_texture

@@ -1,18 +1,18 @@
 extends Node
 
+# World Signals
+signal switch_to_interrogation_room()
+signal switch_to_character_select_room()
+
 # UI Signals
 signal load_game()
 signal open_settings()
 signal open_journal()
 signal close_journal()
 signal open_character_page(tab_num: int)
-signal open_dialogue_viewer()
-signal close_dialogue_viewer()
 signal open_item_viewer()
 signal close_item_viewer()
 signal open_item_description(item: Evidence)
-signal instantiate_interrogation_room_scene_buttons()
-signal instantiate_meter()
 
 # Logic Signals
 signal set_character_info(character: Character)
@@ -21,7 +21,6 @@ signal set_character_info(character: Character)
 signal add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool)
 signal add_options(options: Array[DialogueResponse])
 signal choose_option(option: DialogueResponse)
-signal end_dialogue()
 signal add_continue_button()
 signal continue_button_clicked()
 signal on_continue_button_deleted()

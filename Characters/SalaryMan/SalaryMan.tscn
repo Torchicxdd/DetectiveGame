@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbx2unb7hu7xw"]
+
+[ext_resource type="Texture2D" uid="uid://d3m8bqpqof3pr" path="res://Characters/SalaryMan/salaryman.png" id="1_hwxdj"]
+[ext_resource type="Script" uid="uid://dbsgfej12sxsa" path="res://Characters/SalaryMan/salary_man_scene.gd" id="1_rvd6w"]
+
+[node name="SalaryMan" type="TextureButton"]
+texture_normal = ExtResource("1_hwxdj")
+script = ExtResource("1_rvd6w")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
