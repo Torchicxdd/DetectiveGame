@@ -37,3 +37,5 @@ bus = &"SFX"
 
 [node name="OnMenuClick" type="AudioStreamPlayer" parent="Audios"]
 stream = ExtResource("5_u2i7p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios"]

@@ -15,18 +15,23 @@ func _close_journal() -> void:
 	Global.main.deleteGUIScene(self)
 
 func _on_tab_1_pressed() -> void:
+	$TabChangeEffectPlayer.play()
 	SignalBus.emit_signal("open_character_page", 0)
 
 func _on_tab_2_pressed() -> void:
+	$TabChangeEffectPlayer.play()
 	SignalBus.emit_signal("open_character_page", 1)
 
 func _on_tab_3_pressed() -> void:
+	$TabChangeEffectPlayer.play()
 	SignalBus.emit_signal("open_character_page", 2)
 
 func _on_tab_4_pressed() -> void:
+	$TabChangeEffectPlayer.play()
 	SignalBus.emit_signal("open_character_page", 3)
 
 func _on_tab_5_pressed() -> void:
+	$TabChangeEffectPlayer.play()
 	SignalBus.emit_signal("open_character_page", 4)
 
 func _set_character_info(character: Character) -> void:

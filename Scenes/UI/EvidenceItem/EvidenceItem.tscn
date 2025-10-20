@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqxlcolok057w"]
+[gd_scene load_steps=6 format=3 uid="uid://bqxlcolok057w"]
 
 [ext_resource type="Texture2D" uid="uid://dtjuwkemhfdu6" path="res://Scenes/UI/EvidenceItem/item_border.png" id="1_66kqd"]
 [ext_resource type="Script" uid="uid://ci3ljaluegrgk" path="res://Scenes/UI/EvidenceItem/evidence_item.gd" id="1_qapms"]
+[ext_resource type="AudioStream" uid="uid://fsyyspi0r7fd" path="res://Audio/select_clue.mp3" id="3_qapms"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upoh7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -64,5 +65,9 @@ text = "Item name"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="HoverEffectPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qapms")
+bus = &"SFX"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

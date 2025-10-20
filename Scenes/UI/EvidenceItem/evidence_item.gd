@@ -17,5 +17,6 @@ func set_item(item: Evidence) -> void:
 	has_been_set = true
 	
 func _on_pressed() -> void:
+	$HoverEffectPlayer.play()
 	if (has_been_set):
 		SignalBus.emit_signal("open_item_description", evidence)

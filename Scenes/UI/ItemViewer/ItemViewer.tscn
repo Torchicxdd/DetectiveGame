@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d3nm6fijc7b38"]
+[gd_scene load_steps=36 format=3 uid="uid://d3nm6fijc7b38"]
 
 [ext_resource type="Texture2D" uid="uid://c0hco324vclok" path="res://Scenes/UI/ItemViewer/background.png" id="1_cvd24"]
 [ext_resource type="Script" uid="uid://bkunsylclq4dq" path="res://Scenes/UI/ItemViewer/item_viewer.gd" id="1_fvytp"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://qanxhu60f0r5" path="res://Scenes/UI/ItemViewer/ButtonStates/next_enabled.png" id="14_yo8jg"]
 [ext_resource type="Texture2D" uid="uid://c3klef1d123am" path="res://Scenes/UI/ItemViewer/ButtonStates/next_pressed.png" id="15_otyt5"]
 [ext_resource type="Texture2D" uid="uid://ko022v70hj3d" path="res://Scenes/UI/ItemViewer/ButtonStates/next_disabled.png" id="15_qvb87"]
+[ext_resource type="AudioStream" uid="uid://dsi8ui0tgthvr" path="res://Audio/crt_button.mp3" id="20_8g5b2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8l1a"]
 texture = ExtResource("6_ta81m")
@@ -316,6 +317,10 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_urii2")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qvb87")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_otyt5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_yo8jg")
+
+[node name="TvBtnEffectPlayer" type="AudioStreamPlayer" parent="ControlPanel/Buttons"]
+stream = ExtResource("20_8g5b2")
+bus = &"SFX"
 
 [connection signal="pressed" from="ControlPanel/Buttons/Off" to="ControlPanel/Buttons" method="_on_off_pressed"]
 [connection signal="pressed" from="ControlPanel/Buttons/ItemsList" to="ControlPanel/Buttons" method="_on_items_list_pressed"]

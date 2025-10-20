@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://drsocmov5pca5"]
+[gd_scene load_steps=12 format=3 uid="uid://drsocmov5pca5"]
 
 [ext_resource type="Script" uid="uid://hn0alpmnss40" path="res://Scenes/World/CharacterSelect/character_select.gd" id="1_swuol"]
 [ext_resource type="PackedScene" uid="uid://bcuh4377log2x" path="res://Characters/DonCandy/DonCandy.tscn" id="2_7rvw5"]
 [ext_resource type="Texture2D" uid="uid://drs2lopmru3ru" path="res://Scenes/World/CharacterSelect/background.png" id="2_swuol"]
+[ext_resource type="Script" uid="uid://vkafxdlyibxm" path="res://Scenes/World/CharacterSelect/characters_audio_manager.gd" id="3_dt06q"]
 [ext_resource type="PackedScene" uid="uid://dbx2unb7hu7xw" path="res://Characters/SalaryMan/SalaryMan.tscn" id="3_u5l05"]
 [ext_resource type="PackedScene" uid="uid://bib6eds06q1qc" path="res://Characters/Junkie/Junkie.tscn" id="4_ef4y6"]
 [ext_resource type="PackedScene" uid="uid://dwjqblsyy576o" path="res://Characters/Grandma/Grandma.tscn" id="5_eoj5k"]
 [ext_resource type="PackedScene" uid="uid://do5hrrq6g61jh" path="res://Characters/Teenager/Teenager.tscn" id="6_murur"]
 [ext_resource type="PackedScene" uid="uid://dt13xmdgt6ou5" path="res://Scenes/UI/Menus/VolumeControls.tscn" id="8_8mtsg"]
+[ext_resource type="AudioStream" uid="uid://c071qp0qjkcbj" path="res://Audio/select_char_light.mp3" id="9_au3rf"]
 [ext_resource type="PackedScene" uid="uid://bdwvwgjy5c28v" path="res://Scenes/UI/ContinueButton/ContinueButton.tscn" id="9_vtr3v"]
 
 [node name="CharacterSelect" type="Control"]
@@ -39,6 +41,7 @@ offset_right = -0.60009766
 offset_bottom = -0.040039063
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_dt06q")
 
 [node name="DonCandy" parent="Characters" instance=ExtResource("2_7rvw5")]
 layout_mode = 2
@@ -64,6 +67,10 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
+
+[node name="HoverEffectPlayer" type="AudioStreamPlayer" parent="Characters"]
+stream = ExtResource("9_au3rf")
+bus = &"SFX"
 
 [node name="ContinueButton" parent="." instance=ExtResource("9_vtr3v")]
 layout_mode = 1

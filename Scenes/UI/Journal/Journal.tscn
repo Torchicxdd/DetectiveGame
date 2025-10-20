@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5uj14p4e0jgm"]
+[gd_scene load_steps=11 format=3 uid="uid://5uj14p4e0jgm"]
 
 [ext_resource type="Script" uid="uid://fi1v4k17o07f" path="res://Scenes/UI/Journal/journal.gd" id="1_ri2co"]
 [ext_resource type="Texture2D" uid="uid://cee2ffn1yuw0v" path="res://Scenes/UI/Journal/journal_background.png" id="2_oamcm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xmxq3dpq4ydx" path="res://Scenes/UI/Journal/inactive_tab.png" id="6_02n6t"]
 [ext_resource type="Texture2D" uid="uid://djvl843px0r6y" path="res://Scenes/UI/Journal/tape.png" id="8_2tvdk"]
 [ext_resource type="Theme" uid="uid://bq6s1ll3u64e1" path="res://Themes/MediumTheme.tres" id="8_54433"]
+[ext_resource type="AudioStream" uid="uid://3b4f6aj2j2ql" path="res://Audio/nb_pageturn.mp3" id="10_obyok"]
 [ext_resource type="Texture2D" uid="uid://bqxeb87bdli6k" path="res://Scenes/UI/Journal/evidence.png" id="11_gm7al"]
 
 [node name="Journal" type="Control"]
@@ -308,6 +309,11 @@ offset_bottom = -0.19580078
 theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 17
 columns = 3
+
+[node name="TabChangeEffectPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_obyok")
+pitch_scale = 2.0
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Tab1" to="." method="_on_tab_1_pressed"]
