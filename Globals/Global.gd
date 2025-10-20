@@ -36,6 +36,7 @@ enum Stage {
 	INTRO,
 	ACT1,
 	SUSPICIOUS,
+	OUTRO
 }
 
 enum PowerMoves {

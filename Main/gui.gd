@@ -7,6 +7,7 @@ var scene_buttons_preload = preload("res://Scenes/UI/InterrogationRoomSceneButto
 var meter_preload = preload("res://Scenes/UI/Meter/Meter.tscn")
 var interrogation_room_preload = preload("res://Scenes/World/InterrogationRoom/InterrogationRoom.tscn")
 var character_select_preload = preload("res://Scenes/World/CharacterSelect/CharacterSelect.tscn")
+var main_menu_preload = preload("res://Scenes/UI/Menus/MainMenu.tscn")
 
 var interrogation_room_instance: InterrogationRoom
 var character_select_room_instance: CharacterSelect
@@ -24,6 +25,7 @@ func _ready() -> void:
 	SignalBus.connect("open_item_description", Callable(self, "_open_item_description"))
 	SignalBus.switch_to_character_select_room.connect(_switch_to_character_select)
 	SignalBus.switch_to_interrogation_room.connect(_switch_to_interrogation_room)
+	SignalBus.switch_to_main_menu.connect(_switch_to_main_menu)
 
 func _open_journal() -> void:
 	if (journal == null):
@@ -72,8 +74,11 @@ func _instantiate_meter() -> void:
 	Global.main.addGUIScene(meter)
 
 func _switch_to_interrogation_room() -> void:
+	# Set has talked to for current character
+	Global.current_character.stage_has_talked_to[Global.current_stage] = true
+	
 	if (character_select_room_instance != null):
-		Global.main.removeGUIScene(character_select_room_instance)
+		Global.main.deleteGUIScene(character_select_room_instance)
 	if (interrogation_room_instance == null):
 		interrogation_room_instance = interrogation_room_preload.instantiate() as InterrogationRoom
 	interrogation_room_instance.set_background_texture(Global.current_character.interrogation_room_texture)
@@ -86,7 +91,7 @@ func _switch_to_interrogation_room() -> void:
 	
 func _switch_to_character_select() -> void:
 	if (interrogation_room_instance != null):
-		Global.main.removeGUIScene(interrogation_room_instance)
+		Global.main.deleteGUIScene(interrogation_room_instance)
 	if (character_select_room_instance == null):
 		character_select_room_instance = character_select_preload.instantiate() as CharacterSelect
 	Global.main.addGUIScene(character_select_room_instance)
@@ -95,3 +100,7 @@ func _switch_to_character_select() -> void:
 	_instantiate_meter()
 	_close_dialogue_viewer()
 	SignalBus.close_journal.emit()
+	
+func _switch_to_main_menu() -> void:
+	var main_menu_instance = main_menu_preload.instantiate()
+	Global.main.addGUIScene(main_menu_instance)

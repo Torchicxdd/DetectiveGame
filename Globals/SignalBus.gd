@@ -1,6 +1,7 @@
 extends Node
 
 # World Signals
+signal switch_to_main_menu()
 signal switch_to_interrogation_room()
 signal switch_to_character_select_room()
 

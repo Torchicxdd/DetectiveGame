@@ -9,6 +9,11 @@ var stage_max_clicks = {
 	Global.Stage.ACT1: 0
 }
 
+var stage_has_talked_to = {
+	Global.Stage.INTRO: false,
+	Global.Stage.ACT1: false
+}
+
 # Game States
 var has_seen_intro: bool = false
 var has_investigated_first_time: bool = false

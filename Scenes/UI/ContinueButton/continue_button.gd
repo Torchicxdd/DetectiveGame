@@ -1,7 +1,23 @@
 class_name ContinueButton extends Control
 
 func _ready() -> void:
-	if (Global.current_stage != Global.Stage.SUSPICIOUS):
-		$TextureRect/Button.disabled = true
-	else:
-		$TextureRect/Button.disabled = false
+	var character_array = [
+		Global.grandma,
+		Global.little_child,
+		Global.junkie,
+		Global.salaryman,
+		Global.teenager
+	]
+	
+	for i in character_array:
+		var character = i as Character
+		if character.stage_has_talked_to[Global.current_stage] == false:
+			$TextureRect/Button.disabled = true
+			break
+		else:
+			$TextureRect/Button.disabled = false
+		
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
