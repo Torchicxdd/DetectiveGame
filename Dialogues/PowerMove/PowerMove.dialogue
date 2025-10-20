@@ -1,0 +1,80 @@
+~ start
+
+if Global.current_character == Global.little_child
+	{{Global.current_character.character_name}}: Something
+	
+elif Global.current_character == Global.grandma
+	{{Global.current_character.character_name}}: Something
+	
+elif Global.current_character == Global.junkie
+	{{Global.current_character.character_name}}: Something
+	
+elif Global.current_character == Global.salaryman
+	{{Global.current_character.character_name}}: Something
+	
+elif Global.current_character == Global.teenager
+	{{Global.current_character.character_name}}: Something
+	
+
+
+- Lick Him !! [#power_move=lick] [if Global.power_moves_status[Global.PowerMoves.LICK] == true]
+	if Global.current_character == Global.little_child
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.grandma
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.junkie
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.salaryman
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.teenager
+		{{Global.current_character.character_name}}: Something
+		
+- Threaten Him !! [#power_move=gun] [if Global.power_moves_status[Global.PowerMoves.GUN] == true]
+	if Global.current_character == Global.little_child
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.grandma
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.junkie
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.salaryman
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.teenager
+		{{Global.current_character.character_name}}: Something
+		
+- Aura Farm !! [#power_move=aura] [if Global.power_moves_status[Global.PowerMoves.AURA] == true]
+	if Global.current_character == Global.little_child
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.grandma
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.junkie
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.salaryman
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.teenager
+		{{Global.current_character.character_name}}: Something
+		
+- Tickle Him !! [#power_move=tickle] [if Global.power_moves_status[Global.PowerMoves.TICKLE] == true]
+	if Global.current_character == Global.little_child
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.grandma
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.junkie
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.salaryman
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.teenager
+		{{Global.current_character.character_name}}: Something
+		
+- Silent Treatment !! [#power_move=silent] [if Global.power_moves_status[Global.PowerMoves.SILENT_TREATMENT] == true]
+	if Global.current_character == Global.little_child
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.grandma
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.junkie
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.salaryman
+		{{Global.current_character.character_name}}: Something
+	elif Global.current_character == Global.teenager
+		{{Global.current_character.character_name}}: Something
+
+=> END

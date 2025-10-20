@@ -19,8 +19,25 @@ var meter_percentage: float = 50.0:
 		meter_percentage = new_value
 		SignalBus.meter_percentage_changed.emit(meter_percentage)
 
+var power_moves_status = {
+	PowerMoves.LICK: true,
+	PowerMoves.GUN: true,
+	PowerMoves.AURA: true,
+	PowerMoves.TICKLE: true,
+	PowerMoves.SILENT_TREATMENT: true,
+}
+
 # Enums for game stages
 enum Stage {
 	INTRO,
-	ACT1
+	ACT1,
+	SUSPICIOUS,
+}
+
+enum PowerMoves {
+	LICK,
+	GUN,
+	AURA,
+	TICKLE,
+	SILENT_TREATMENT
 }

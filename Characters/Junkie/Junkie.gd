@@ -11,4 +11,5 @@ func _init() -> void:
 	
 	stage_max_clicks[Global.Stage.INTRO] = 4
 	
+	stage_dialogue_resources[Global.Stage.SUSPICIOUS] = preload("res://Dialogues/PowerMove/PowerMove.dialogue")
 	stage_dialogue_resources[Global.Stage.INTRO] = preload("res://Dialogues/Intro/JunkieIntro.dialogue")

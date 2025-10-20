@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://db816gne83hlg"
+path="res://.godot/imported/PowerMove.dialogue-7e18247a0b05e4c564409f65e9a29a15.tres"
+
+[deps]
+
+source_file="res://Dialogues/PowerMove/PowerMove.dialogue"
+dest_files=["res://.godot/imported/PowerMove.dialogue-7e18247a0b05e4c564409f65e9a29a15.tres"]
+
+[params]
+
+defaults=true
