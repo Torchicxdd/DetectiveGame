@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ucb8ghkmtic2"]
+[gd_scene load_steps=5 format=3 uid="uid://ucb8ghkmtic2"]
 
-[ext_resource type="Texture2D" uid="uid://ch6iqewjlw1n2" path="res://Scenes/UI/ItemViewer/item_viewer_background.png" id="1_7bd3e"]
 [ext_resource type="Script" uid="uid://d1mr7khy040w5" path="res://Scenes/UI/Menus/main_menu.gd" id="1_rhk34"]
+[ext_resource type="Texture2D" uid="uid://bfx3l6jjh4roc" path="res://Scenes/UI/Menus/main_menu_background.png" id="2_rhk34"]
 [ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="2_wmdaq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhk34"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,32 +23,107 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7bd3e")
+texture = ExtResource("2_rhk34")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Wrapper" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -480.0
-offset_right = 480.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 0.07700001
+anchor_top = 0.42700002
+anchor_right = 0.44900003
+anchor_bottom = 0.87500006
+offset_left = -0.3400116
+offset_top = -0.16000366
+offset_right = 0.87994385
+offset_bottom = -6.1035156e-05
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Wrapper/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("2_wmdaq")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/normal_font_size = 48
+text = "Candy Crime: A National Security Threat on 32nd Street"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Wrapper/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+
+[node name="Play" type="Button" parent="Wrapper/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("2_wmdaq")
+theme_override_colors/font_color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+theme_override_colors/font_pressed_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+theme_override_colors/font_hover_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhk34")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rhk34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rhk34")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rhk34")
 text = "New Game"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="Wrapper/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 theme = ExtResource("2_wmdaq")
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+theme_override_colors/font_pressed_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+theme_override_colors/font_hover_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhk34")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rhk34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rhk34")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rhk34")
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="Credits" type="HBoxContainer" parent="Wrapper"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="Wrapper/Credits"]
+layout_mode = 2
+theme = ExtResource("2_wmdaq")
+theme_override_colors/font_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
+theme_override_font_sizes/font_size = 14
+text = "Made By"
+
+[node name="Label2" type="Label" parent="Wrapper/Credits"]
+layout_mode = 2
+theme = ExtResource("2_wmdaq")
+theme_override_colors/font_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
+theme_override_font_sizes/font_size = 14
+text = "Torchic"
+
+[node name="Label3" type="Label" parent="Wrapper/Credits"]
+layout_mode = 2
+theme = ExtResource("2_wmdaq")
+theme_override_colors/font_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
+theme_override_font_sizes/font_size = 14
+text = "Mathena"
+
+[node name="Label4" type="Label" parent="Wrapper/Credits"]
+layout_mode = 2
+theme = ExtResource("2_wmdaq")
+theme_override_colors/font_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
+theme_override_font_sizes/font_size = 14
+text = "Kunyro"
+
+[node name="Label5" type="Label" parent="Wrapper/Credits"]
+layout_mode = 2
+theme = ExtResource("2_wmdaq")
+theme_override_colors/font_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
+theme_override_font_sizes/font_size = 14
+text = "Ekb9816"
+
+[connection signal="pressed" from="Wrapper/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Wrapper/VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
