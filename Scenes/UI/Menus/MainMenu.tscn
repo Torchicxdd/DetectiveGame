@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ucb8ghkmtic2"]
+[gd_scene load_steps=6 format=3 uid="uid://ucb8ghkmtic2"]
 
 [ext_resource type="Script" uid="uid://d1mr7khy040w5" path="res://Scenes/UI/Menus/main_menu.gd" id="1_rhk34"]
 [ext_resource type="Texture2D" uid="uid://bfx3l6jjh4roc" path="res://Scenes/UI/Menus/main_menu_background.png" id="2_rhk34"]
 [ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="2_wmdaq"]
+[ext_resource type="PackedScene" uid="uid://dt13xmdgt6ou5" path="res://Scenes/UI/Menus/VolumeControls.tscn" id="4_83y2r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhk34"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -124,6 +125,17 @@ theme = ExtResource("2_wmdaq")
 theme_override_colors/font_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
 theme_override_font_sizes/font_size = 14
 text = "Ekb9816"
+
+[node name="VolumeControls" parent="." instance=ExtResource("4_83y2r")]
+layout_mode = 1
+anchor_left = 0.859
+anchor_top = 0.68100005
+anchor_right = 0.92100006
+anchor_bottom = 0.89000005
+offset_left = 0.6999512
+offset_top = 0.44995117
+offset_right = -0.5600586
+offset_bottom = -0.20007324
 
 [connection signal="pressed" from="Wrapper/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Wrapper/VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

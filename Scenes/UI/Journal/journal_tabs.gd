@@ -8,6 +8,9 @@ func _ready() -> void:
 	
 	set_tab_names()
 
+func _exit_tree() -> void:
+	SignalBus.disconnect("open_character_page", Callable(self, "_open_character_page"))
+
 func _open_character_page(tabs_num: int) -> void:
 	$Tab1.texture_normal = inactive_tab
 	$Tab2.texture_normal = inactive_tab

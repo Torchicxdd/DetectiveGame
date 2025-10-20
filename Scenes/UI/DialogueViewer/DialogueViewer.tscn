@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brvietxk5gysh"]
+[gd_scene load_steps=8 format=3 uid="uid://brvietxk5gysh"]
 
 [ext_resource type="Texture2D" uid="uid://cvri7ef23e3xr" path="res://Scenes/UI/DialogueViewer/background.png" id="1_kmhhc"]
 [ext_resource type="Script" uid="uid://cddg2vqoi82p4" path="res://Scenes/UI/DialogueViewer/dialogue_viewer.gd" id="1_pop77"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgkx7g00uqb8q" path="res://Scenes/UI/DialogueViewer/fade_mask.png" id="3_0y25l"]
 [ext_resource type="Texture2D" uid="uid://hvw5v1txw25c" path="res://Scenes/UI/DialogueViewer/default_emotion.png" id="3_cv02b"]
 [ext_resource type="Theme" uid="uid://7x0dtol1wfud" path="res://Themes/RegularTheme.tres" id="3_lhiwb"]
+[ext_resource type="PackedScene" uid="uid://dt13xmdgt6ou5" path="res://Scenes/UI/Menus/VolumeControls.tscn" id="7_i54j1"]
 
 [node name="DialogueViewer" type="Control"]
 layout_mode = 3
@@ -95,3 +96,10 @@ anchor_top = 0.033
 anchor_right = 0.901
 anchor_bottom = 0.277
 texture = ExtResource("3_0y25l")
+
+[node name="VolumeControls" parent="." instance=ExtResource("7_i54j1")]
+layout_mode = 1
+offset_left = 431.22
+offset_top = 782.88
+offset_right = 431.88
+offset_bottom = 783.31006

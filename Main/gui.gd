@@ -55,7 +55,7 @@ func _open_item_viewer() -> void:
 
 func _close_journal() -> void:
 	if (journal != null):
-		Global.main.removeGUIScene(journal)
+		Global.main.deleteGUIScene(journal)
 	
 func _close_item_viewer() -> void:
 	if (item_viewer != null):
@@ -82,6 +82,7 @@ func _switch_to_interrogation_room() -> void:
 	_instantiate_interrogation_room_scene_buttons()
 	_open_dialogue_viewer()
 	_instantiate_meter()
+	SignalBus.close_journal.emit()
 	
 func _switch_to_character_select() -> void:
 	if (interrogation_room_instance != null):
@@ -93,3 +94,4 @@ func _switch_to_character_select() -> void:
 	_instantiate_interrogation_room_scene_buttons()
 	_instantiate_meter()
 	_close_dialogue_viewer()
+	SignalBus.close_journal.emit()
