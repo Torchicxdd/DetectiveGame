@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://4e35o06378gt"]
+[gd_scene load_steps=8 format=3 uid="uid://4e35o06378gt"]
 
 [ext_resource type="Script" uid="uid://cs1bomoolnt6q" path="res://Main/main.gd" id="1_83ytx"]
 [ext_resource type="Script" uid="uid://b4bnti47qm4bo" path="res://Main/world.gd" id="2_amygn"]
 [ext_resource type="Script" uid="uid://bt00val0cod17" path="res://Main/gui.gd" id="3_amygn"]
 [ext_resource type="AudioStream" uid="uid://nv6008tcnebv" path="res://Audio/moving_between_rooms.mp3" id="4_6aewd"]
+[ext_resource type="Script" uid="uid://djbrdy521fcj6" path="res://Main/audios.gd" id="4_hh5pf"]
 [ext_resource type="AudioStream" uid="uid://ih331wakpo1h" path="res://Audio/ost.mp3" id="4_ps1la"]
 [ext_resource type="AudioStream" uid="uid://bfblokql75htr" path="res://Audio/menu_button.mp3" id="5_u2i7p"]
 
@@ -22,16 +23,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_amygn")
 
-[node name="Audios" type="Node" parent="GUI"]
+[node name="Audios" type="Node" parent="."]
+script = ExtResource("4_hh5pf")
 
-[node name="SwitchingRooms" type="AudioStreamPlayer" parent="GUI/Audios"]
-stream = ExtResource("4_6aewd")
-bus = &"SFX"
-
-[node name="OnMenuClick" type="AudioStreamPlayer" parent="GUI/Audios"]
-stream = ExtResource("5_u2i7p")
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="Audios"]
 stream = ExtResource("4_ps1la")
 autoplay = true
 bus = &"Music"
+
+[node name="SwitchingRooms" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("4_6aewd")
+bus = &"SFX"
+
+[node name="OnMenuClick" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("5_u2i7p")
