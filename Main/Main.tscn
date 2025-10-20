@@ -24,6 +24,7 @@ script = ExtResource("3_amygn")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ps1la")
+autoplay = true
 bus = &"Music"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]

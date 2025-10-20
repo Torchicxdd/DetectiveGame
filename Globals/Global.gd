@@ -27,6 +27,10 @@ var power_moves_status = {
 	PowerMoves.SILENT_TREATMENT: true,
 }
 
+var master_volume: float = 50.0
+var sfx_volume: float = 50.0
+var music_volume: float = 50.0
+
 # Enums for game stages
 enum Stage {
 	INTRO,

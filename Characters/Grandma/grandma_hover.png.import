@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbyt8jryw0gv6"
-path="res://.godot/imported/doncandy.png-3e5f870a53007586e340ecfbe585d40f.ctex"
+uid="uid://14fwxradaqcw"
+path="res://.godot/imported/grandma_hover.png-16c4a764383591493749dc262548e0dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/DonCandy/doncandy.png"
-dest_files=["res://.godot/imported/doncandy.png-3e5f870a53007586e340ecfbe585d40f.ctex"]
+source_file="res://Characters/Grandma/grandma_hover.png"
+dest_files=["res://.godot/imported/grandma_hover.png-16c4a764383591493749dc262548e0dc.ctex"]
 
 [params]
 

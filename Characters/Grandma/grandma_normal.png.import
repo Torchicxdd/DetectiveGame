@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eitbo1s8s0rl"
-path="res://.godot/imported/grandma.png-9c88dca055972756794c38ae664d3086.ctex"
+uid="uid://bje0dvyvbtlf"
+path="res://.godot/imported/grandma_normal.png-58041e1af3c2abe2508c253a1136e4b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Grandma/grandma.png"
-dest_files=["res://.godot/imported/grandma.png-9c88dca055972756794c38ae664d3086.ctex"]
+source_file="res://Characters/Grandma/grandma_normal.png"
+dest_files=["res://.godot/imported/grandma_normal.png-58041e1af3c2abe2508c253a1136e4b2.ctex"]
 
 [params]
 

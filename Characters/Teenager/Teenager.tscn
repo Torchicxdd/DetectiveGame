@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://do5hrrq6g61jh"]
+[gd_scene load_steps=4 format=3 uid="uid://do5hrrq6g61jh"]
 
 [ext_resource type="Script" uid="uid://2fn7318vbbbg" path="res://Characters/Teenager/teenager_scene.gd" id="1_8bshu"]
-[ext_resource type="Texture2D" uid="uid://2uxuvi2rco01" path="res://Characters/Teenager/teenager.png" id="1_kib01"]
+[ext_resource type="Texture2D" uid="uid://c6x2raakbsc4h" path="res://Characters/Teenager/teenager_normal.png" id="1_s6r7f"]
+[ext_resource type="Texture2D" uid="uid://cgu4qodqvnod1" path="res://Characters/Teenager/teenager_hover.png" id="2_s6r7f"]
 
 [node name="Teenager" type="TextureButton"]
-texture_normal = ExtResource("1_kib01")
+texture_normal = ExtResource("1_s6r7f")
+texture_hover = ExtResource("2_s6r7f")
 script = ExtResource("1_8bshu")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

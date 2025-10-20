@@ -99,7 +99,7 @@ texture = ExtResource("3_0y25l")
 
 [node name="VolumeControls" parent="." instance=ExtResource("7_i54j1")]
 layout_mode = 1
-offset_left = 431.22
+offset_left = 400.0
 offset_top = 782.88
-offset_right = 431.88
+offset_right = 400.66
 offset_bottom = 783.31006

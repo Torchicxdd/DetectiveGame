@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2uxuvi2rco01"
-path="res://.godot/imported/teenager.png-80cc3a710e36e996a9aa592d957779dd.ctex"
+uid="uid://dnv15yque7st2"
+path="res://.godot/imported/salary_man_hover.png-f3b02f5eb26d9ac7c5a4c2ed989c303d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Teenager/teenager.png"
-dest_files=["res://.godot/imported/teenager.png-80cc3a710e36e996a9aa592d957779dd.ctex"]
+source_file="res://Characters/SalaryMan/salary_man_hover.png"
+dest_files=["res://.godot/imported/salary_man_hover.png-f3b02f5eb26d9ac7c5a4c2ed989c303d.ctex"]
 
 [params]
 

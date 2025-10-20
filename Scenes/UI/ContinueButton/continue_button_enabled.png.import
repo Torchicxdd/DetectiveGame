@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k3f0j8mh6gxi"
-path="res://.godot/imported/junkie.png-b86708b5bab8fb7146327352fe21eab8.ctex"
+uid="uid://besejtmbjyemy"
+path="res://.godot/imported/continue_button_enabled.png-7b06bbf197157f066764e6968814bd4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Junkie/junkie.png"
-dest_files=["res://.godot/imported/junkie.png-b86708b5bab8fb7146327352fe21eab8.ctex"]
+source_file="res://Scenes/UI/ContinueButton/continue_button_enabled.png"
+dest_files=["res://.godot/imported/continue_button_enabled.png-7b06bbf197157f066764e6968814bd4e.ctex"]
 
 [params]
 

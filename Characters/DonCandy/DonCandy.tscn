@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcuh4377log2x"]
+[gd_scene load_steps=4 format=3 uid="uid://bcuh4377log2x"]
 
-[ext_resource type="Texture2D" uid="uid://dbyt8jryw0gv6" path="res://Characters/DonCandy/doncandy.png" id="1_6o4pm"]
+[ext_resource type="Texture2D" uid="uid://4qqign2ki01g" path="res://Characters/DonCandy/don_candy_normal.png" id="1_3o6cu"]
 [ext_resource type="Script" uid="uid://k37tedasiqd8" path="res://Characters/DonCandy/don_candy_scene.gd" id="1_fclu1"]
+[ext_resource type="Texture2D" uid="uid://c0v34d6dj31a0" path="res://Characters/DonCandy/don_candy_hover.png" id="2_3o6cu"]
 
 [node name="DonCandy" type="TextureButton"]
 offset_right = 240.0
 offset_bottom = 613.0
-texture_normal = ExtResource("1_6o4pm")
+texture_normal = ExtResource("1_3o6cu")
+texture_hover = ExtResource("2_3o6cu")
 script = ExtResource("1_fclu1")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
