@@ -18,6 +18,5 @@ func _ready() -> void:
 			$TextureRect/Button.disabled = false
 		
 
-
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	Global.current_stage = Global.Stage.SUSPICIOUS

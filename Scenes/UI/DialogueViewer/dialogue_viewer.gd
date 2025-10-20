@@ -5,6 +5,9 @@ class_name DialogueViewer extends Control
 @onready var character_image = $CharacterDisplay/CharacterImage
 @onready var character_name = $CharacterDisplay/VBoxContainer/CharacterName
 
+var inner_voice_timer: Timer = null
+@onready var inner_voice_loop = $InnerVoiceLoop
+
 var normal_dialogue_scene = preload("res://Scenes/UI/Dialogue/NormalDialogue.tscn")
 var inner_thoughts_scene = preload("res://Scenes/UI/Dialogue/InnerThoughtsDialogue.tscn")
 var options_dialogue_scene = preload("res://Scenes/UI/Dialogue/OptionsDialogue.tscn")
@@ -39,6 +42,7 @@ func _exit_tree() -> void:
 func _add_dialogue(name: String, dialogue: String, is_inner_thoughts: bool) -> void:
 	var instance: DialogueItem
 	if (is_inner_thoughts):
+		play_inner_voice()
 		instance = inner_thoughts_scene.instantiate()
 		instance.set_character_name(name, true)
 	else:
@@ -88,3 +92,19 @@ func _continue_button_clicked() -> void:
 	continue_button.queue_free()
 	dialogue_display.queue_redraw()
 	SignalBus.emit_signal("on_continue_button_deleted")
+
+func play_inner_voice() -> void:
+	inner_voice_loop.stop()
+	
+	if inner_voice_timer != null:
+		inner_voice_timer.stop()
+		inner_voice_timer.queue_free()
+	
+	inner_voice_timer = Timer.new()
+	inner_voice_timer.wait_time = 10.0
+	inner_voice_timer.one_shot = true
+	inner_voice_timer.timeout.connect(func(): inner_voice_loop.stop())
+	add_child(inner_voice_timer)
+	
+	inner_voice_loop.play()
+	inner_voice_timer.start()

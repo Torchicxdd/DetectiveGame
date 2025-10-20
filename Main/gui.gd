@@ -17,6 +17,9 @@ var journal: Journal
 var dialogue_viewer: DialogueViewer
 var item_viewer: ItemViewer
 
+@onready var switch_rooms = $Audios/SwitchingRooms
+@onready var on_menu_click = $Audios/OnMenuClick
+
 func _ready() -> void:
 	SignalBus.connect("open_journal", Callable(self, "_open_journal"))
 	SignalBus.connect("close_journal", Callable(self, "_close_journal"))
@@ -26,6 +29,7 @@ func _ready() -> void:
 	SignalBus.switch_to_character_select_room.connect(_switch_to_character_select)
 	SignalBus.switch_to_interrogation_room.connect(_switch_to_interrogation_room)
 	SignalBus.switch_to_main_menu.connect(_switch_to_main_menu)
+	SignalBus.on_menu_click.connect(_on_menu_clicked)
 
 func _open_journal() -> void:
 	if (journal == null):
@@ -75,6 +79,7 @@ func _instantiate_meter() -> void:
 
 func _switch_to_interrogation_room() -> void:
 	# Set has talked to for current character
+	switch_rooms.play()
 	Global.current_character.stage_has_talked_to[Global.current_stage] = true
 	
 	if (character_select_room_instance != null):
@@ -90,6 +95,7 @@ func _switch_to_interrogation_room() -> void:
 	SignalBus.close_journal.emit()
 	
 func _switch_to_character_select() -> void:
+	switch_rooms.play()
 	if (interrogation_room_instance != null):
 		Global.main.deleteGUIScene(interrogation_room_instance)
 	if (character_select_room_instance == null):
@@ -104,3 +110,6 @@ func _switch_to_character_select() -> void:
 func _switch_to_main_menu() -> void:
 	var main_menu_instance = main_menu_preload.instantiate()
 	Global.main.addGUIScene(main_menu_instance)
+
+func _on_menu_clicked() -> void:
+	on_menu_click.play()

@@ -41,3 +41,6 @@ signal enable_previous_button()
 
 # Meter Signals
 signal meter_percentage_changed(new_percentage: float)
+
+# Audio Signals
+signal on_menu_click()
